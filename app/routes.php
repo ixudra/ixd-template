@@ -23,10 +23,8 @@ Route::group(array('before' => 'guest'), function()
 });
 
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+
+Route::get(     '/',                    array('as' => 'index2',                     'uses' => 'HomeController@index'));
 
 
 
