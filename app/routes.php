@@ -24,6 +24,7 @@ Route::group(array('before' => 'guest'), function()
 
 
 
+Route::get(     '',                     array('as' => 'index',                      'uses' => 'HomeController@index'));
 Route::get(     '/',                    array('as' => 'index2',                     'uses' => 'HomeController@index'));
 
 
@@ -42,7 +43,7 @@ Validator::resolver(function($translator, $data, $rules, $messages)
 
 
 /**
- * HTML marcos
+ * HTML macros
  */
 
 HTML::macro('imageRoute', function($route = '', $img='img/', $alt = '', $parameters = array(), $attributes = array())

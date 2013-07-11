@@ -177,4 +177,46 @@ class IxudraValidator extends Illuminate\Validation\Validator {
         return false;
     }
 
+    public function validateValidPassword($attribute, $value, $parameters)
+    {
+        if( strlen($value) < 6 )
+            return false;
+
+        if( preg_match('/\d/', $value) != 1 )
+            return false;
+
+        if( preg_match('/[A-Z]/', $value) != 1 )
+            return false;
+
+        if( preg_match('/[@#&?.-_%$]/', $value) != 1 )
+            return false;
+
+        return true;
+    }
+
+    public function validateLessThanThreeDaysOld($attribute, $value, $parameters)
+    {
+        $date = $this->_getValueAsDate($value);
+
+        return ( ( $date != null ) && ( (new DateTime( date('Y-m-d H:i:s', strtotime('-3 days')) )) < ($date) ) );
+    }
+
+    public function validateTrue($attribute, $value, $parameters)
+    {
+        return $value === true;
+    }
+
+    public function validateSizeSmallerThan($attribute, $value, $parameters)
+    {
+        return $this->getSize($attribute, $value) <= $parameters[0];
+    }
+
+    public function validateMoreThanOneSelected($attribute, $value, $parameters)
+    {
+        if( !is_array( $value ) )
+            return false;
+
+        return sizeof($value) > 0;
+    }
+
 }

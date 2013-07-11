@@ -5,6 +5,7 @@
 
 	"require": {
 		"laravel/framework": "4.0.*",
+        "robclancy/presenter": "1.0.x",
 		"phpunit/phpunit": "3.7.*"
 	},
 

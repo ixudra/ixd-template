@@ -5,21 +5,19 @@ class BaseRepositoryTestCase extends BaseTestCase {
 
     protected function _assertCollectionWithOnlyInstancesOf($type, $items)
     {
-        foreach( $items as $item )
-        {
+        foreach( $items as $item ) {
             $this->assertInstanceOf($type, $item);
         }
     }
 
-    protected function _assertCollectionContains($collection, $items)
+    protected function _assertCollectionContains($expected, $actual)
     {
-        foreach( $collection as $object )
-        {
+        foreach( $actual as $object ) {
             $found = false;
-            foreach( $items as $key => $value )
-            {
+
+            foreach( $expected as $key => $value ) {
                 if( $object->id == $value->id ) {
-                    unset( $items[$key]);
+                    unset( $expected[$key]);
                     $found = true;
                     break;
                 }
@@ -28,7 +26,16 @@ class BaseRepositoryTestCase extends BaseTestCase {
             $this->assertTrue( $found );
         }
 
-        $this->assertTrue( sizeof($items ) == 0 );
+        $this->assertTrue( sizeof( $expected ) == 0 );
+    }
+
+    protected function _assertCollectionContainsInOrder($expected, $actual)
+    {
+        $this->assertTrue( sizeof( $expected ) == sizeof( $actual ) );
+
+        for( $i = 0; $i < sizeof( $actual ); ++$i ) {
+            $this->assertEquals( $expected[$i]->id, $actual[$i]->id );
+        }
     }
 
 }

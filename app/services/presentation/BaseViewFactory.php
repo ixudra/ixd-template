@@ -21,9 +21,8 @@ class BaseViewFactory {
 
     protected function makeView( $view )
     {
-        if( Auth::check() )
-        {
-            $this->parameters['activeUser'] = Auth::user();
+        if( Auth::check() ) {
+            $this->addParameter('activeUser', Auth::user());
         }
 
         return View::make( $view, $this->parameters );

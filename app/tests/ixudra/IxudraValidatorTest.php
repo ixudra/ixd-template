@@ -20,7 +20,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateEmailAddress(null, 'jan.oris@gmail.com', null) );
     }
@@ -30,7 +30,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfValueContainsNoAt()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan.orisixudra.com', null) );
     }
@@ -40,7 +40,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfValueContainsMoreThanOneAt()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan@oris@ixudra.com', null) );
     }
@@ -50,7 +50,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfValueContainsNoLocal()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, '@ixudra.com', null) );
     }
@@ -60,7 +60,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfValueContainsNoTLD()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan.oris@ixudra', null) );
     }
@@ -70,7 +70,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfValueContainsNoDomain()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan.oris@com', null) );
     }
@@ -80,7 +80,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfDomainDoesNotExist()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan.oris@ixudra.com', null) );
     }
@@ -90,7 +90,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfLocalContainsTwoConsecutiveDots()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan..oris@ixudra.com', null) );
     }
@@ -100,7 +100,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmailAddress_returnsFalseIfDomainContainsTwoConsecutiveDots()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmailAddress(null, 'jan.oris@ixudra..com', null) );
     }
@@ -110,7 +110,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateWebAddress()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateWebAddress(null, 'www.google.be', null) );
     }
@@ -120,7 +120,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateWebAddress_returnsFalseIfWebAddressDoesNotContainTLD()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateWebAddress(null, 'www.elimentz', null) );
     }
@@ -130,7 +130,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateWebAddress_returnsFalseIfWebAddressDoesNotContainWww()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateWebAddress(null, 'elimentz.be', null) );
     }
@@ -140,7 +140,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateWebAddress_returnsFalseIfDomainDoesNotExist()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateWebAddress(null, 'www.elimentz.com', null) );
     }
@@ -150,7 +150,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateWebAddress_returnsFalseIfDomainContainsTwoConsecutiveDots()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateWebAddress(null, 'www.elimentz..be', null) );
     }
@@ -160,7 +160,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTruthy_returnsTrueIfValueIsTrue()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTruthy(null, true, null) );
     }
@@ -170,7 +170,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTruthy_returnsTrueIfValueIsFalse()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTruthy(null, false, null) );
     }
@@ -180,7 +180,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTruthy_returnsFalseIfValueIsText()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateTruthy(null, 'foo', null) );
     }
@@ -190,7 +190,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTruthy_returnsFalseIfValueIsNumeric()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateTruthy(null, 1, null) );
     }
@@ -200,7 +200,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateFuture()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateFuture(null, date('Y-m-d', strtotime('+1 year')), null) );
     }
@@ -210,7 +210,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateFuture_returnsFalseIfValueIsInThePast()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateFuture(null, date('Y-m-d', strtotime('-1 year')), null) );
     }
@@ -220,7 +220,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateFuture_returnsFalseIfValueIsText()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateFuture(null, 'foo', null) );
     }
@@ -230,7 +230,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateFuture_returnsFalseIfValueIsInteger()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateFuture(null, 1, null) );
     }
@@ -240,7 +240,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidatePast()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validatePast(null, date('Y-m-d', strtotime('-1 year')), null) );
     }
@@ -250,7 +250,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidatePast_returnsFalseIfValueIsInTheFuture()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validatePast(null, date('Y-m-d', strtotime('+1 year')), null) );
     }
@@ -260,7 +260,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidatePast_returnsFalseIfValueIsText()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validatePast(null, 'foo', null) );
     }
@@ -270,7 +270,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidatePast_returnsFalseIfValueIsInteger()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validatePast(null, 1, null) );
     }
@@ -280,7 +280,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTodayOrLater()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTodayOrLater(null, date('Y-m-d', strtotime('+1 year')), null) );
     }
@@ -290,7 +290,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTodayOrLater_returnsFalseIfValueIsInThePast()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateTodayOrLater(null, date('Y-m-d', strtotime('-1 year')), null) );
     }
@@ -300,7 +300,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTodayOrLater_returnsTrueIfDateIsToday()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTodayOrLater(null, date('Y-m-d'), null) );
     }
@@ -310,7 +310,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTodayOrLater_returnsTrueIfDateIsTodayWithLargeFormat()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTodayOrLater(null, date('Y-m-d H:i:s'), null) );
     }
@@ -320,7 +320,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateFuture_returnsFalseIfValueIsNumeric()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateFuture(null, 1, null) );
     }
@@ -330,7 +330,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmpty()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateEmpty(null, '', null) );
     }
@@ -340,7 +340,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateEmpty_failsIfValueIsNotEmpty()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateEmpty(null, 'foo', null) );
     }
@@ -350,7 +350,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTime()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTime(null, '19:00:00', null) );
     }
@@ -360,7 +360,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTime_passesOnShortNotation()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertTrue( self::$validator->validateTime(null, '19:00', null) );
     }
@@ -370,7 +370,7 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTime_FailsIfValueIsString()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateTime(null, 'foo', null) );
     }
@@ -380,33 +380,153 @@ class IxudraValidatorTest extends BaseTestCase {
      */
     public function testValidateTime_FailsIfValueIsInteger()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
         $this->assertFalse( self::$validator->validateTime(null, '10055223366', null) );
     }
 
     /**
-     * @covers IxudraValidator::validateTimeFormat()
+     * @covers IxudraValidator::validateValidPassword()
      */
-    public function testValidateTimeFormat()
+    public function testValidatePassword()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
-        $this->assertTrue( self::$validator->validateTimeFormat(null, '15:00', null) );
+        $this->assertTrue( self::$validator->validateValidPassword(null, 'Abc@123', null) );
     }
 
     /**
-     * @covers IxudraValidator::validateTimeFormat()
+     * @covers IxudraValidator::validateValidPassword()
      */
-    public function testValidateTimeFormat_failsIfFormatShowsSeconds()
+    public function testValidatePassword_failsIfPasswordIsLessThanSixCharactersLong()
     {
-        $this->makeValidator( array(), array(), array() );
+        $this->_makeValidator( array(), array(), array() );
 
-        $this->assertFalse( self::$validator->validateTimeFormat(null, '15:00:00', null) );
+        $this->assertFalse( self::$validator->validateValidPassword(null, 'foo', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateValidPassword()
+     */
+    public function testValidatePassword_failsIfPasswordDoesNotContainCapitalLetter()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateValidPassword(null, 'abc@123', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateValidPassword()
+     */
+    public function testValidatePassword_failsIfPasswordDoesNotContainSpecialCharacter()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateValidPassword(null, 'abcd123', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateValidPassword()
+     */
+    public function testValidatePassword_failsIfPasswordDoesNotContainNumber()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateValidPassword(null, 'abcd123', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateTrue()
+     */
+    public function testValidateTrue()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertTrue( self::$validator->validateTrue(null, true, null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateTrue()
+     */
+    public function testValidateTrue_returnsFalseIfValueIsFalse()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateTrue(null, false, null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateTrue()
+     */
+    public function testValidateTrue_returnsFalseIfValueIsString()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateTrue(null, 'foo', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateTrue()
+     */
+    public function testValidateTrue_returnsFalseIfValueIsInteger()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateTrue(null, 125, null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateLessThanThreeDaysOld()
+     */
+    public function testValidateLessThanThreeDaysOld()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertTrue( self::$validator->validateLessThanThreeDaysOld(null, date('Y-m-d', strtotime('-1 day')), null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateLessThanThreeDaysOld()
+     */
+    public function testValidateLessThanThreeDaysOld_failsIfDateIsMoreThanThreeDaysOld()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateLessThanThreeDaysOld(null, date('Y-m-d', strtotime('-1 year')), null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateMoreThanOneSelected()
+     */
+    public function testValidateMoreThanOneSelected()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertTrue( self::$validator->validateMoreThanOneSelected(null, array(1 => 2, 4 => 5), null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateMoreThanOneSelected()
+     */
+    public function testValidateMoreThanOneSelected_returnsFalseIfValueIsNotArray()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateMoreThanOneSelected(null, 'Foo', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateMoreThanOneSelected()
+     */
+    public function testValidateMoreThanOneSelected_returnsFalseIfArrayIsEmpty()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateMoreThanOneSelected(null, array(), null) );
     }
 
 
-    protected function makeValidator( $attributes, $rules, $messages )
+    protected function _makeValidator( $attributes, $rules, $messages )
     {
         self::$validator = Validator::make( $attributes, $rules, $messages );
     }

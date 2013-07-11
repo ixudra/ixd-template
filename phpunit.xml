@@ -30,6 +30,7 @@
             <directory suffix=".php">./app/controllers</directory>
             <directory suffix=".php">./app/ixudra</directory>
             <directory suffix=".php">./app/models</directory>
+            <directory suffix=".php">./app/presenters</directory>
             <directory suffix=".php">./app/repositories</directory>
             <directory suffix=".php">./app/services</directory>
         </whitelist>
