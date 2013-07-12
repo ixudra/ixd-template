@@ -3,31 +3,32 @@
     "description": "Template for all future Ixudra projects.",
     "keywords": ["Ixudra"],
 
-	"require": {
-		"laravel/framework": "4.0.*",
+    "require": {
+        "laravel/framework": "4.0.*",
         "robclancy/presenter": "1.0.x",
-		"phpunit/phpunit": "3.7.*"
-	},
+        "phpunit/phpunit": "3.7.*"
+    },
 
     "require-dev": {
         "mockery/mockery": "dev-master"
     },
 
-	"autoload": {
-		"classmap": [
-			"app/commands",
-			"app/controllers",
+    "autoload": {
+        "classmap": [
+            "app/commands",
+            "app/controllers",
             "app/ixudra",
-			"app/models",
-			"app/repositories",
-			"app/services",
-			"app/database/migrations",
-			"app/database/seeds",
+            "app/models",
+            "app/presenters",
+            "app/repositories",
+            "app/services",
+            "app/database/migrations",
+            "app/database/seeds",
             "app/tests/base/BaseTestCase.php",
             "app/tests/base/BaseRepositoryTestCase.php",
             "app/tests/base/BaseViewFactoryTestCase.php"
-		]
-	},
+        ]
+    },
 
     "scripts": {
         "pre-update-cmd": [
@@ -41,9 +42,9 @@
         ]
     },
 
-	"config": {
-		"preferred-install": "dist"
-	},
+    "config": {
+        "preferred-install": "dist"
+    },
 
-	"minimum-stability": "dev"
+    "minimum-stability": "dev"
 }
