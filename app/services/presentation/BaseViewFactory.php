@@ -4,8 +4,8 @@
 class BaseViewFactory {
 
     protected $parameters = array(
-        'messageType' => '',
-        'messageValues' => array(),
+        'messageType'       => '',
+        'messageValues'     => array()
     );
 
     public function notifyUser( $type, $messages )
@@ -27,5 +27,6 @@ class BaseViewFactory {
 
         return View::make( $view, $this->parameters );
     }
+
 }
 

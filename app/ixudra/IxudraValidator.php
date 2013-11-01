@@ -107,10 +107,13 @@ class IxudraValidator extends Illuminate\Validation\Validator {
 
     public function validateTruthy($attribute, $value, $parameters)
     {
-        if( $value === true )
+        if( $value === true ) {
             return true;
-        if( $value === false )
+        }
+
+        if( $value === false ) {
             return true;
+        }
 
         return false;
     }
@@ -179,17 +182,21 @@ class IxudraValidator extends Illuminate\Validation\Validator {
 
     public function validateValidPassword($attribute, $value, $parameters)
     {
-        if( strlen($value) < 6 )
+        if( strlen($value) < 6 ) {
             return false;
+        }
 
-        if( preg_match('/\d/', $value) != 1 )
+        if( preg_match('/\d/', $value) != 1 ) {
             return false;
+        }
 
-        if( preg_match('/[A-Z]/', $value) != 1 )
+        if( preg_match('/[A-Z]/', $value) != 1 ) {
             return false;
+        }
 
-        if( preg_match('/[@#&?.-_%$]/', $value) != 1 )
+        if( preg_match('/[@#&?.-_%$]/', $value) != 1 ) {
             return false;
+        }
 
         return true;
     }
@@ -206,17 +213,27 @@ class IxudraValidator extends Illuminate\Validation\Validator {
         return $value === true;
     }
 
-    public function validateSizeSmallerThan($attribute, $value, $parameters)
-    {
-        return $this->getSize($attribute, $value) <= $parameters[0];
-    }
-
-    public function validateMoreThanOneSelected($attribute, $value, $parameters)
+    public function validateOneOrMoreSelected($attribute, $value, $parameters)
     {
         if( !is_array( $value ) )
             return false;
 
-        return sizeof($value) > 0;
+        $count = 0;
+        foreach( $value as $item ) {
+            if( $item ) {
+                ++$count;
+            }
+        }
+
+        return $count > 0;
+    }
+
+    public function validateArraySize($attribute, $value, $parameters)
+    {
+        if( !is_array( $value ) )
+            return false;
+
+        return sizeof($value) == $parameters[0];
     }
 
 }

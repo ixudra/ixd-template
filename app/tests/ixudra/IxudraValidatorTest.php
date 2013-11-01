@@ -496,33 +496,83 @@ class IxudraValidatorTest extends BaseTestCase {
     }
 
     /**
-     * @covers IxudraValidator::validateMoreThanOneSelected()
+     * @covers IxudraValidator::validateOneOrMoreSelected()
      */
-    public function testValidateMoreThanOneSelected()
+    public function testValidateOneOrMoreSelected()
     {
         $this->_makeValidator( array(), array(), array() );
 
-        $this->assertTrue( self::$validator->validateMoreThanOneSelected(null, array(1 => 2, 4 => 5), null) );
+        $this->assertTrue( self::$validator->validateOneOrMoreSelected(null, array(1 => true, 4 => false), null) );
     }
 
     /**
-     * @covers IxudraValidator::validateMoreThanOneSelected()
+     * @covers IxudraValidator::validateOneOrMoreSelected()
      */
-    public function testValidateMoreThanOneSelected_returnsFalseIfValueIsNotArray()
+    public function testValidateOneOrMoreSelected_returnsFalseIfZeroSelected()
     {
         $this->_makeValidator( array(), array(), array() );
 
-        $this->assertFalse( self::$validator->validateMoreThanOneSelected(null, 'Foo', null) );
+        $this->assertFalse( self::$validator->validateOneOrMoreSelected(null, array(1 => false, 4 => false), null) );
     }
 
     /**
-     * @covers IxudraValidator::validateMoreThanOneSelected()
+     * @covers IxudraValidator::validateOneOrMoreSelected()
      */
-    public function testValidateMoreThanOneSelected_returnsFalseIfArrayIsEmpty()
+    public function testValidateOneOrMoreSelected_returnsFalseIfValueIsNotArray()
     {
         $this->_makeValidator( array(), array(), array() );
 
-        $this->assertFalse( self::$validator->validateMoreThanOneSelected(null, array(), null) );
+        $this->assertFalse( self::$validator->validateOneOrMoreSelected(null, 'Foo', null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateOneOrMoreSelected()
+     */
+    public function testValidateOneOrMoreSelected_returnsFalseIfArrayIsEmpty()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateOneOrMoreSelected(null, array(), null) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateArraySize()
+     */
+    public function testValidateArraySize()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertTrue( self::$validator->validateArraySize(null, array('one', 'two', 'three', 'four', 'five'), array(5)) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateArraySize()
+     */
+    public function testValidateArraySize_retunsFalseValueIsNotArray()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateArraySize(null, 'Foo', array(5)) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateArraySize()
+     */
+    public function testValidateArraySize_retunsFalseIfArrayContainsLessThanRequestedNumber()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateArraySize(null, array('one', 'two', 'three', 'four', 'five'), array(10)) );
+    }
+
+    /**
+     * @covers IxudraValidator::validateArraySize()
+     */
+    public function testValidateArraySize_retunsFalseIfArrayContainsMoreThanRequestedNumber()
+    {
+        $this->_makeValidator( array(), array(), array() );
+
+        $this->assertFalse( self::$validator->validateArraySize(null, array('one', 'two', 'three', 'four', 'five'), array(2)) );
     }
 
 

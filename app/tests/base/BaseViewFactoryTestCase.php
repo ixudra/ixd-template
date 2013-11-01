@@ -29,14 +29,14 @@ class BaseViewFactoryTestCase extends BaseTestCase {
         $this->assertNotNull($view->getData()[$primary] );
     }
 
-    protected function _assertViewInstanceOf($view, $primary, $expected)
+    protected function _assertViewInstanceOf($view, $primary, $instance)
     {
-        $this->assertInstanceOf( $expected, $view->getData()[$primary] );
+        $this->assertInstanceOf( $instance, $view->getData()[$primary] );
     }
 
-    protected function _assertViewDataSize($view, $primary, $expected)
+    protected function _assertViewDataSize($view, $primary, $size)
     {
-        $this->assertEquals( $expected, sizeof($view->getData()[$primary]) );
+        $this->assertEquals( $size, sizeof($view->getData()[$primary]) );
     }
 
 }

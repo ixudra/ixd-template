@@ -23,7 +23,11 @@ There are several actions that need to be to be executed before development of a
  - Run composer update --no-scripts
  - Run composer update
  - Generate a private key
+ - Update private key in app.php files in different config directories
+ - Enter your secret key in the application setup in app/config/local/app.php
+ - Enter your secret key in the application setup in app/config/testing/app.php
+ - Enter your secret key in the application setup in app/config/production/app.php
  - Add new virtual host to apache hosts file + restart apache server
- - Add redirect to Windows hosts file (if necessary)
+ - Add redirect to your hosts file
 
 

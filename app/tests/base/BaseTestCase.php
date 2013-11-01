@@ -3,11 +3,6 @@
 
 class BaseTestCase extends Illuminate\Foundation\Testing\TestCase {
 
-	/**
-	 * Creates the application.
-	 *
-	 * @return Symfony\Component\HttpKernel\HttpKernelInterface
-	 */
 	public function createApplication()
 	{
 		$unitTesting = true;
@@ -20,9 +15,16 @@ class BaseTestCase extends Illuminate\Foundation\Testing\TestCase {
     protected function _deleteModels()
     {
         $models = func_get_args();
-        foreach($models as $model)
-        {
+        foreach($models as $model) {
             $model->delete();
+        }
+    }
+
+    protected function _truncateTables()
+    {
+        $tables = func_get_args();
+        foreach($tables as $table) {
+            DB::table($table)->delete();
         }
     }
 

@@ -5,12 +5,15 @@ class BaseModelResponse {
 
     protected $model;
 
+    protected $input;
+
     protected $notifications;
 
 
-    public function __construct()
+    public function __construct($model = null, $input = null)
     {
-        $this->model = null;
+        $this->model = $model;
+        $this->input = $input;
         $this->notifications = array();
     }
 
@@ -25,18 +28,30 @@ class BaseModelResponse {
         $this->model = $model;
     }
 
+    public function getInput()
+    {
+        return $this->input;
+    }
+
+    public function setInput($input)
+    {
+        $this->input = $input;
+    }
+
     public function getNotifications($type)
     {
-        if(!isset($this->notifications[$type]))
-            return null;
+        if( !isset($this->notifications[$type]) ) {
+            return array();
+        }
 
         return $this->notifications[$type];
     }
 
     public function addNotifications($type, $notifications)
     {
-        if(!isset($this->notifications[$type]))
+        if( !isset($this->notifications[$type]) ) {
             $this->notifications[$type] = array();
+        }
 
         $this->notifications[$type] = array_merge($this->notifications[$type], $notifications);
     }
@@ -51,4 +66,5 @@ class BaseModelResponse {
     {
         return !$this->isSuccessful();
     }
+
 }

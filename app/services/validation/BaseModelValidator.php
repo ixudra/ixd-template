@@ -14,30 +14,33 @@ class BaseModelValidator {
 
     public function setAttributes($attributes)
     {
-        $this->attributes = $attributes;
+        $this->attributes = $this->_preProcessAttributes( $attributes );
     }
 
 
     public function make()
     {
-        if( !$this->validator )
+        if( !$this->validator ) {
             $this->validator = Validator::make( $this->attributes, $this->rules, $this->messages );
+        }
 
         return $this->validator;
     }
 
     public function fails()
     {
-        if( !$this->validator )
+        if( !$this->validator ) {
             $this->make();
+        }
 
         return $this->validator->fails();
     }
 
     public function passes()
     {
-        if( !$this->validator )
+        if( !$this->validator ) {
             $this->make();
+        }
 
         return $this->validator->passes();
     }
@@ -46,4 +49,10 @@ class BaseModelValidator {
     {
         return $this->validator->errors()->all();
     }
+
+    protected function _preProcessAttributes($attributes)
+    {
+        return $attributes;
+    }
+
 }
