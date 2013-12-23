@@ -2,16 +2,19 @@
 /vendor
 
 
+/build/logs
+
+
+/app/config/local/database.php
+/app/config/local/mail.php
+/app/config/fortrabbit/fortrabbit.txt
+
+
 composer.phar
 
 
 .DS_Store
 
+
 /.idea
-
-
-/build/logs
-
-
-/app/config/local/
 
