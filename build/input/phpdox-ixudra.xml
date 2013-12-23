@@ -1,5 +1,5 @@
 <phpdox xmlns="http://phpdox.de/config" silent="false">
-    <project name="Ixudra" source="/data/source/ixudra/YourAppName/app" workdir="/data/jenkins/jobs/YourAppName/workspace/build/output/phpdox/xml">
+    <project name="YourAppName" source="/data/source/ixudra/YourAppName/app" workdir="/data/jenkins/jobs/YourAppName/workspace/build/output/phpdox/xml">
         <!--  @name    - The name of the project -->
         <!--  @source  - The source directory of the application to process -->
         <!--  @workdir - The directory to store the xml data files in -->
