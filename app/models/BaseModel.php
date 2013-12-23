@@ -22,7 +22,18 @@ abstract class BaseModel extends Eloquent {
 
     public abstract function remove();
 
-    public abstract function isValid($validator = 'default');
+    public function isValid($validationKey = 'default')
+    {
+        $validator = App::make( $this->getValidator( $validationKey ) );
+        $input = $this->attributesToArray();
+
+        $validator->setAttributes( $input );
+        if( $validator->fails() ) {
+            return false;
+        }
+
+        return true;
+    }
 
     public function save(array $options = array())
     {
@@ -31,7 +42,7 @@ abstract class BaseModel extends Eloquent {
             $validator = $options['validator'];
         }
 
-        if( $this->validated || $this->isValid($validator) ) {
+        if( $this->validated || $this->isValid( $validator ) ) {
             return parent::save($options);
         }
 
