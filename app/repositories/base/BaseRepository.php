@@ -16,7 +16,7 @@ class BaseRepository {
                 continue;
             }
         }
-        
+
         return $filters;
     }
 
