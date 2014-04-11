@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Laravailability</title>
+    <title>YourAppName</title>
     <meta name="viewport" content="width=device-width">
 
     {{ HTML::style('vendor/bootstrap/css/bootstrap.css') }}

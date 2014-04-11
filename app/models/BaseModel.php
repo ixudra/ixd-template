@@ -11,7 +11,8 @@ abstract class BaseModel extends Eloquent {
     );
 
 
-    public function isValidated() {
+    public function isValidated()
+    {
         return $this->validated;
     }
 
@@ -47,6 +48,11 @@ abstract class BaseModel extends Eloquent {
         }
 
         return false;
+    }
+
+    public function forceSave(array $options = array())
+    {
+        return $this->save( array( 'validator' => 'testing' ) );
     }
 
 

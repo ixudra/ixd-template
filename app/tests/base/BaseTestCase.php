@@ -3,19 +3,19 @@
 
 class BaseTestCase extends Illuminate\Foundation\Testing\TestCase {
 
-	public function createApplication()
-	{
-		$unitTesting = true;
+    public function createApplication()
+    {
+        $unitTesting = true;
 
-		$testEnvironment = 'testing';
+        $testEnvironment = 'testing';
 
-		return require __DIR__ . '/../../../bootstrap/start.php';
-	}
+        return require __DIR__ . '/../../../bootstrap/start.php';
+    }
 
     protected function _deleteModels()
     {
         $models = func_get_args();
-        foreach($models as $model) {
+        foreach( $models as $model ) {
             $model->delete();
         }
     }
@@ -23,7 +23,7 @@ class BaseTestCase extends Illuminate\Foundation\Testing\TestCase {
     protected function _truncateTables()
     {
         $tables = func_get_args();
-        foreach($tables as $table) {
+        foreach( $tables as $table ) {
             DB::table($table)->delete();
         }
     }
