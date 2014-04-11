@@ -1,16 +1,18 @@
 ## Ixudra Project Template
 
-This is a project template for any future Laravel project that will be developed by Ixudra, a Belgian web development company owned by Jan Oris.
+This is a project template for any future Laravel project that will be developed by Ixudra, a Belgian PHP development company owned by Jan Oris. It is modified to use Laravel 4.1.
+
+This package can be used by anyone at any given time, but keep in mind that it is optimized for my personal custom workflow. It may not suit your project perfectly and modifications may be in order.
 
 
 ## New project setup
 
 There are several actions that need to be to be executed before development of a new application can start:
 
- - Download the template into a new directory: git clone https://Elimentz@bitbucket.org/Elimentz/ixd-template.git YourAppName
+ - Download the template into a new directory: git clone git@github.com:ixudra/ixd-template.git YourAppName
  - Remove the existing git repository: rm -rf YourAppName/.git
  - Initialize a new git repository inside the YourAppName directory: git init
- - Add your name and email to the .git config: vi .git/config
+ - Add your name and email to the .git config: vim .git/config
  - Add a new remote for your repository: git remote add origin https://urlToYourApp
  - Add, commit and push your files to the repository
  - Add url and custom packages to app/config/app.php (if necessary)

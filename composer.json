@@ -1,7 +1,7 @@
 {
     "name": "Ixd-Template",
     "description": "Template for all future Ixudra projects.",
-    "keywords": ["Ixudra"],
+    "keywords": ["Ixudra","Laravel"],
 
     "require": {
         "laravel/framework": "4.1.*",
