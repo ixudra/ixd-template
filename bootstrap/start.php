@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-    'local'             => array('YourMachineName'),
+    'local'             => array('ixudra'),
     'production'        => array('ProductionMachineName'),
 
 ));
