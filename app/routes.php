@@ -34,10 +34,10 @@ Route::get(     '/',                    array('as' => 'index2',                 
  * Validator resolving
  */
 
-Validator::resolver(function($translator, $data, $rules, $messages)
-{
-    return new IxudraValidator($translator, $data, $rules, $messages);
-});
+//Validator::resolver(function($translator, $data, $rules, $messages)
+//{
+//    return new IxudraValidator($translator, $data, $rules, $messages);
+//});
 
 
 
