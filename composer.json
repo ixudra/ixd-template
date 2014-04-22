@@ -5,7 +5,8 @@
 
     "require": {
         "laravel/framework": "4.1.*",
-        "robclancy/presenter": "1.2.x",
+        "ixudra/validation": "dev-master",
+        "laracasts/presenter": "0.1.*",
         "phpunit/phpunit": "4.0.*"
     },
 
@@ -17,16 +18,13 @@
         "classmap": [
             "app/commands",
             "app/controllers",
-            "app/ixudra",
             "app/models",
             "app/presenters",
             "app/repositories",
             "app/services",
             "app/database/migrations",
             "app/database/seeds",
-            "app/tests/base/BaseTestCase.php",
-            "app/tests/base/BaseRepositoryTestCase.php",
-            "app/tests/base/BaseViewFactoryTestCase.php"
+            "app/tests/base"
         ]
     },
 
