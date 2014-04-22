@@ -5,9 +5,13 @@
 /build/logs
 
 
-/app/config/local/database.php
-/app/config/local/mail.php
-/app/config/fortrabbit/fortrabbit.txt
+/app/config/local/
+/app/config/testing/
+/app/config/fortrabbit/
+/app/config/production/
+
+
+/.env*.php
 
 
 composer.phar
