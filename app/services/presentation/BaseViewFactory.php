@@ -1,8 +1,6 @@
 <?php
 
 
-use \Robbo\Presenter\PresentableInterface;
-
 class BaseViewFactory {
 
     protected $parameters = array(
@@ -29,30 +27,6 @@ class BaseViewFactory {
         }
 
         return View::make( $view, $this->parameters );
-    }
-
-    protected function convertObjectsToPresenters($objects)
-    {
-        $results = array();
-        foreach( $objects as $key => $object ) {
-            $results[$key] = $this->convertObjectToPresenter($object);
-        }
-
-        return $results;
-    }
-
-    protected function convertObjectToPresenter($object)
-    {
-        if( $object instanceof PresentableInterface ) {
-            return $object->getPresenter();
-        }
-
-        return $object;
-    }
-
-    protected function isCollection($value)
-    {
-        return is_array($value) || ($value instanceof \Illuminate\Support\Collection);
     }
 
 }
