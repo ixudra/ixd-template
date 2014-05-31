@@ -8,9 +8,21 @@ class BaseViewFactory {
         'messageValues'     => array()
     );
 
+    protected $translationHelper;
 
-    public function notifyUser($type, $messages)
+
+    public function __construct(TranslationHelper $translationHelper)
     {
+        $this->translationHelper = $translationHelper;
+    }
+
+
+    public function notifyUser($type, $messages, $translate = true)
+    {
+        if( $translate ) {
+            $messages = $this->translateMessages($messages);
+        }
+
         $this->addParameter('messageType', $type);
         $this->addParameter('messageValues', $messages);
     }
@@ -27,6 +39,16 @@ class BaseViewFactory {
         }
 
         return View::make( $view, $this->parameters );
+    }
+
+    protected function translateMessages($messages)
+    {
+        $results = array();
+        foreach( $messages as $message ) {
+            array_push($results, $this->translationHelper->translateMessage($message));
+        }
+
+        return $results;
     }
 
 }
