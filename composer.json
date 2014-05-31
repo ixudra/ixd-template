@@ -13,7 +13,8 @@
     "require-dev": {
         "mockery/mockery": "dev-master",
         "phpunit/phpunit": "4.0.*",
-        "codeception/codeception": "dev-master"
+        "codeception/codeception": "dev-master",
+        "barryvdh/laravel-debugbar": "1.*"
     },
 
     "autoload": {
@@ -38,7 +39,8 @@
             "php artisan optimize"
         ],
         "post-update-cmd": [
-            "php artisan optimize"
+            "php artisan optimize",
+            "php artisan debugbar:publish"
         ]
     },
 
