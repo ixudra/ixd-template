@@ -3,17 +3,14 @@
 
 class DateTimeServiceTest extends BaseTestCase {
 
-    protected static $dateTimeService;
+    protected $dateTimeService;
 
 
-    public static function setUpBeforeClass()
+    public function setUp()
     {
-        self::$dateTimeService = new DateTimeService();
-    }
+        parent::setUp();
 
-    public static function tearDownAfterClass()
-    {
-        self::$dateTimeService = NULL;
+        $this->dateTimeService = new DateTimeService();
     }
 
 
@@ -22,7 +19,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetWeekOfDate()
     {
-        $index = self::$dateTimeService->getWeekOfDate('2013-01-31');
+        $index = $this->dateTimeService->getWeekOfDate('2013-01-31');
 
         $this->assertEquals( 5, $index );
     }
@@ -32,7 +29,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetWeekOfDate_returnsFirstWeekIfDateFallsInFirstWeek()
     {
-        $index = self::$dateTimeService->getWeekOfDate('2013-01-05');
+        $index = $this->dateTimeService->getWeekOfDate('2013-01-05');
 
         $this->assertEquals( 1, $index );
     }
@@ -42,7 +39,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetDaysOfWeek()
     {
-        $days = self::$dateTimeService->getDaysOfWeek(4, 2013);
+        $days = $this->dateTimeService->getDaysOfWeek(4, 2013);
 
         $this->assertCount( 7, $days );
         $this->assertEquals( '2013-01-21', $days['monday'] );
@@ -59,7 +56,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetDaysOfWeek_showsLastWeekOfAugust()
     {
-        $days = self::$dateTimeService->getDaysOfWeek(35, 2013);
+        $days = $this->dateTimeService->getDaysOfWeek(35, 2013);
 
         $this->assertCount( 7, $days );
         $this->assertEquals( '2013-08-26', $days['monday'] );
@@ -76,7 +73,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetDaysOfWeek_showsLastWeekOfYearCorrectly()
     {
-        $days = self::$dateTimeService->getDaysOfWeek(52, 2013);
+        $days = $this->dateTimeService->getDaysOfWeek(52, 2013);
 
         $this->assertCount( 7, $days );
         $this->assertEquals( '2013-12-23', $days['monday'] );
@@ -93,7 +90,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetDaysOfWeek_movesOnToNextYearIfWeekIsLargerThanFiftyTwo()
     {
-        $days = self::$dateTimeService->getDaysOfWeek(55, 2013);
+        $days = $this->dateTimeService->getDaysOfWeek(55, 2013);
 
         $this->assertCount( 7, $days );
         $this->assertEquals( '2014-01-13', $days['monday'] );
@@ -110,7 +107,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetDaysOfWeek_returnsNullIfIndexIsSmallerThanOne()
     {
-        $days = self::$dateTimeService->getDaysOfWeek(-4, 2013);
+        $days = $this->dateTimeService->getDaysOfWeek(-4, 2013);
 
         $this->assertNull( $days );
     }
@@ -120,7 +117,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetDaysOfWeek_returnsNullIfYearIsSmallerThanOne()
     {
-        $days = self::$dateTimeService->getDaysOfWeek(4, -2013);
+        $days = $this->dateTimeService->getDaysOfWeek(4, -2013);
 
         $this->assertNull( $days );
     }
@@ -130,7 +127,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetLastMondayBeforeDate()
     {
-        $date = self::$dateTimeService->getLastMondayBeforeDate('2013-05-25');
+        $date = $this->dateTimeService->getLastMondayBeforeDate('2013-05-25');
 
         $this->assertEquals( '2013-05-20', $date );
     }
@@ -140,7 +137,7 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetLastMondayBeforeDate_returnsSameDateIfGivenDateIsMonday()
     {
-        $date = self::$dateTimeService->getLastMondayBeforeDate('2013-05-20');
+        $date = $this->dateTimeService->getLastMondayBeforeDate('2013-05-20');
 
         $this->assertEquals( '2013-05-20', $date );
     }
@@ -150,13 +147,13 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testGetWeekdayOfMessage()
     {
-        $this->assertEquals( 'monday', self::$dateTimeService->getWeekDayOfDate('2013-08-12'));
-        $this->assertEquals( 'tuesday', self::$dateTimeService->getWeekDayOfDate('2013-08-13'));
-        $this->assertEquals( 'wednesday', self::$dateTimeService->getWeekDayOfDate('2013-08-14'));
-        $this->assertEquals( 'thursday', self::$dateTimeService->getWeekDayOfDate('2013-08-15'));
-        $this->assertEquals( 'friday', self::$dateTimeService->getWeekDayOfDate('2013-08-16'));
-        $this->assertEquals( 'saturday', self::$dateTimeService->getWeekDayOfDate('2013-08-17'));
-        $this->assertEquals( 'sunday', self::$dateTimeService->getWeekDayOfDate('2013-08-18'));
+        $this->assertEquals( 'monday', $this->dateTimeService->getWeekDayOfDate('2013-08-12'));
+        $this->assertEquals( 'tuesday', $this->dateTimeService->getWeekDayOfDate('2013-08-13'));
+        $this->assertEquals( 'wednesday', $this->dateTimeService->getWeekDayOfDate('2013-08-14'));
+        $this->assertEquals( 'thursday', $this->dateTimeService->getWeekDayOfDate('2013-08-15'));
+        $this->assertEquals( 'friday', $this->dateTimeService->getWeekDayOfDate('2013-08-16'));
+        $this->assertEquals( 'saturday', $this->dateTimeService->getWeekDayOfDate('2013-08-17'));
+        $this->assertEquals( 'sunday', $this->dateTimeService->getWeekDayOfDate('2013-08-18'));
     }
 
     /**
@@ -164,13 +161,13 @@ class DateTimeServiceTest extends BaseTestCase {
      */
     public function testConvertTimeToThirtyMinuteTimestamp()
     {
-        $this->assertEquals( '00:30', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('00:46'));
-        $this->assertEquals( '15:30', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('15:30'));
-        $this->assertEquals( '18:00', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('18:21'));
-        $this->assertEquals( '00:00', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('00:00'));
-        $this->assertEquals( '23:30', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('23:59'));
-        $this->assertEquals( '21:30', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('21:31'));
-        $this->assertEquals( '16:00', self::$dateTimeService->convertTimeToThirtyMinuteTimestamp('16:15'));
+        $this->assertEquals( '00:30', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('00:46'));
+        $this->assertEquals( '15:30', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('15:30'));
+        $this->assertEquals( '18:00', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('18:21'));
+        $this->assertEquals( '00:00', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('00:00'));
+        $this->assertEquals( '23:30', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('23:59'));
+        $this->assertEquals( '21:30', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('21:31'));
+        $this->assertEquals( '16:00', $this->dateTimeService->convertTimeToThirtyMinuteTimestamp('16:15'));
     }
 
 }

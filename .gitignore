@@ -3,6 +3,10 @@
 
 
 /build/logs
+/build/coverage
+
+
+/app/tests/_log
 
 
 /app/config/local/
@@ -21,4 +25,8 @@ composer.phar
 
 
 /.idea
+
+
+/app/config/packages
+/public/packages
 

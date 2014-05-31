@@ -1,0 +1,19 @@
+# Codeception Test Suite Configuration
+
+# suite for unit (internal) tests.
+# RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.
+
+class_name: CodeGuy
+modules:
+    enabled:
+      - Asserts
+      - CodeHelper
+coverage:
+    enabled: true
+    whitelist:
+        include:
+            - app/controllers/*
+            - app/models/*
+            - app/presenters/*
+            - app/repositories/*
+            - app/services/*

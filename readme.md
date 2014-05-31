@@ -25,11 +25,19 @@ There are several actions that need to be to be executed before development of a
  - Run composer update --no-scripts
  - Run composer update
  - Generate a private key
- - Update private key in app.php files in different config directories
  - Enter your secret key in the application setup in app/config/local/app.php
  - Enter your secret key in the application setup in app/config/testing/app.php
  - Enter your secret key in the application setup in app/config/production/app.php
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
+
+ ## CodeCeption setup
+ - Run composer update (if you haven't done so already
+ - Modify and replace YourAppName in the database configuration in codeception.yml
+ - Modify and replace YourAppName in the application url in app/tests/acceptance.suite.yml
+ - Create a database dump of your test database (empty tables and/or static data) and move it to app/tests/_data/dump.sql
+ - Run vendor/bin/codecept build command to build test guys for testing purposes (should be repeated every time you change modules for a suite)
+ - Run vendor/bim/codecept run to run all test suites
+ - Run vendor/bin/codecept run --coverage-html to run all test suites with HTML code coverage
 
 

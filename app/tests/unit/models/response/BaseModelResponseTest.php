@@ -3,12 +3,14 @@
 
 class BaseModelResponseTest extends BaseTestCase {
 
-    protected static $baseModelResponse;
+    protected $baseModelResponse;
 
 
     public function setUp()
     {
-        self::$baseModelResponse = new BaseModelResponse();
+        parent::setUp();
+        
+        $this->baseModelResponse = new BaseModelResponse();
     }
 
 
@@ -18,13 +20,13 @@ class BaseModelResponseTest extends BaseTestCase {
      */
     public function testNotifications()
     {
-        self::$baseModelResponse->addNotifications('success', array('Foo_1'));
-        self::$baseModelResponse->addNotifications('success', array('Foo_2'));
-        self::$baseModelResponse->addNotifications('error', array('Foo_3'));
+        $this->baseModelResponse->addNotifications('success', array('Foo_1'));
+        $this->baseModelResponse->addNotifications('success', array('Foo_2'));
+        $this->baseModelResponse->addNotifications('error', array('Foo_3'));
 
-        $successes = self::$baseModelResponse->getNotifications('success');
-        $errors = self::$baseModelResponse->getNotifications('error');
-        $info = self::$baseModelResponse->getNotifications('info');
+        $successes = $this->baseModelResponse->getNotifications('success');
+        $errors = $this->baseModelResponse->getNotifications('error');
+        $info = $this->baseModelResponse->getNotifications('info');
 
         $this->assertCount( 2, $successes );
         $this->assertEquals( 'Foo_1', $successes[0] );
@@ -46,12 +48,12 @@ class BaseModelResponseTest extends BaseTestCase {
         $translationHelperMock->shouldReceive('translateModel')->once()->with('Foo_1')->andReturn('Bar_1');
         App::instance('TranslationHelper', $translationHelperMock);
 
-        self::$baseModelResponse = new BaseModelResponse();
+        $this->baseModelResponse = new BaseModelResponse();
 
-        self::$baseModelResponse->addNotifications('success', array('Foo_1'), true);
-        self::$baseModelResponse->addNotifications('success', array('Foo_2'));
+        $this->baseModelResponse->addNotifications('success', array('Foo_1'), true);
+        $this->baseModelResponse->addNotifications('success', array('Foo_2'));
 
-        $successes = self::$baseModelResponse->getNotifications('success');
+        $successes = $this->baseModelResponse->getNotifications('success');
 
         $this->assertCount( 2, $successes );
         $this->assertEquals( 'Bar_1', $successes[0] );
@@ -63,10 +65,10 @@ class BaseModelResponseTest extends BaseTestCase {
      */
     public function testIsSuccessful_returnsTrueIfResponseContainsNoErrorNotifications()
     {
-        self::$baseModelResponse->addNotifications('success', array('Foo_1'));
-        self::$baseModelResponse->addNotifications('info', array('Foo_2'));
+        $this->baseModelResponse->addNotifications('success', array('Foo_1'));
+        $this->baseModelResponse->addNotifications('info', array('Foo_2'));
 
-        $this->assertTrue( self::$baseModelResponse->isSuccessful() );
+        $this->assertTrue( $this->baseModelResponse->isSuccessful() );
     }
 
     /**
@@ -74,9 +76,9 @@ class BaseModelResponseTest extends BaseTestCase {
      */
     public function testIsSuccessful_returnsFalseIfResponseContainsErrorNotification()
     {
-        self::$baseModelResponse->addNotifications('error', array('Foo_1'));
+        $this->baseModelResponse->addNotifications('error', array('Foo_1'));
 
-        $this->assertFalse( self::$baseModelResponse->isSuccessful() );
+        $this->assertFalse( $this->baseModelResponse->isSuccessful() );
     }
 
     /**
@@ -84,10 +86,10 @@ class BaseModelResponseTest extends BaseTestCase {
      */
     public function testIsUnsuccessful_returnsFalseIfResponseContainsNoErrorNotifications()
     {
-        self::$baseModelResponse->addNotifications('success', array('Foo_1'));
-        self::$baseModelResponse->addNotifications('info', array('Foo_2'));
+        $this->baseModelResponse->addNotifications('success', array('Foo_1'));
+        $this->baseModelResponse->addNotifications('info', array('Foo_2'));
 
-        $this->assertFalse( self::$baseModelResponse->isUnsuccessful() );
+        $this->assertFalse( $this->baseModelResponse->isUnsuccessful() );
     }
 
     /**
@@ -95,9 +97,9 @@ class BaseModelResponseTest extends BaseTestCase {
      */
     public function testIsUnsuccessful_returnsFalseIfResponseContainsErrorNotification()
     {
-        self::$baseModelResponse->addNotifications('error', array('Foo_1'));
+        $this->baseModelResponse->addNotifications('error', array('Foo_1'));
 
-        $this->assertTrue( self::$baseModelResponse->isUnsuccessful() );
+        $this->assertTrue( $this->baseModelResponse->isUnsuccessful() );
     }
 
 }

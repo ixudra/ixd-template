@@ -1,0 +1,19 @@
+actor: Guy
+paths:
+    tests: app/tests
+    log: app/tests/_log
+    data: app/tests/_data
+    helpers: app/tests/_helpers
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        Db:
+            dsn: 'mysql:host=localhost;dbname=ixd_YourAppName_test'
+            user: 'ixd_YourAppName_user_test'
+            password: 'ixd_YourAppName_pwd_test'
+            dump: app/tests/_data/dump.sql
+            populate: true
+            cleanup: true
