@@ -14,7 +14,8 @@
         "mockery/mockery": "dev-master",
         "phpunit/phpunit": "4.0.*",
         "codeception/codeception": "dev-master",
-        "barryvdh/laravel-debugbar": "1.*"
+        "barryvdh/laravel-debugbar": "1.*",
+        "ixudra/generators": "0.1.*"
     },
 
     "autoload": {

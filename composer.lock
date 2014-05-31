@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ddda18c8b9f258625d2d7806cdff129c",
+    "hash": "8744fdbe39818c9ff914bd5ddff34c8a",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2634,6 +2634,56 @@
                 "stream"
             ],
             "time": "2014-04-03 04:48:24"
+        },
+        {
+            "name": "ixudra/generators",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ixudra/generators.git",
+                "reference": "301ea40873bada0abfac04d4b3707b95bd0c2b5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ixudra/generators/zipball/301ea40873bada0abfac04d4b3707b95bd0c2b5f",
+                "reference": "301ea40873bada0abfac04d4b3707b95bd0c2b5f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.1.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master@dev",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Ixudra\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Oris",
+                    "email": "jan.oris@ixudra.be"
+                }
+            ],
+            "description": "Custom PHP resource generation library for the Laravel 4 framework - developed by Ixudra",
+            "homepage": "http://ixudra.be",
+            "keywords": [
+                "Ixudra",
+                "generator",
+                "laravel"
+            ],
+            "time": "2014-05-25 08:07:59"
         },
         {
             "name": "maximebf/debugbar",
