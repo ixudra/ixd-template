@@ -12,7 +12,7 @@ class BaseTestCase extends Illuminate\Foundation\Testing\TestCase {
         return require __DIR__ . '/../../../../bootstrap/start.php';
     }
 
-    protected function _deleteModels()
+    protected function deleteModels()
     {
         $models = func_get_args();
         foreach( $models as $model ) {
@@ -20,7 +20,7 @@ class BaseTestCase extends Illuminate\Foundation\Testing\TestCase {
         }
     }
 
-    protected function _truncateTables()
+    protected function truncateTables()
     {
         $tables = func_get_args();
         foreach( $tables as $table ) {

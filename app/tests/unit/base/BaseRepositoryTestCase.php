@@ -3,14 +3,14 @@
 
 class BaseRepositoryTestCase extends BaseTestCase {
 
-    protected function _assertCollectionWithOnlyInstancesOf($type, $items)
+    protected function assertCollectionWithOnlyInstancesOf($type, $items)
     {
         foreach( $items as $item ) {
             $this->assertInstanceOf($type, $item);
         }
     }
 
-    protected function _assertCollectionContains($expected, $actual)
+    protected function assertCollectionContains($expected, $actual)
     {
         foreach( $actual as $object ) {
             $found = false;
@@ -29,7 +29,7 @@ class BaseRepositoryTestCase extends BaseTestCase {
         $this->assertTrue( sizeof( $expected ) == 0 );
     }
 
-    protected function _assertCollectionContainsInOrder($expected, $actual)
+    protected function assertCollectionContainsInOrder($expected, $actual)
     {
         $this->assertTrue( sizeof( $expected ) == sizeof( $actual ) );
 

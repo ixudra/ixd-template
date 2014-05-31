@@ -10,37 +10,38 @@ class BaseViewFactory {
         'messageValues'     => array()
     );
 
+
     public function notifyUser($type, $messages)
     {
-        $this->_addParameter('messageType', $type);
-        $this->_addParameter('messageValues', $messages);
+        $this->addParameter('messageType', $type);
+        $this->addParameter('messageValues', $messages);
     }
 
-    protected function _addParameter($key, $value)
+    protected function addParameter($key, $value)
     {
         $this->parameters[$key] = $value;
     }
 
-    protected function _makeView($view)
+    protected function makeView($view)
     {
         if( Auth::check() ) {
-            $this->_addParameter( 'activeUser', Auth::user() );
+            $this->addParameter( 'activeUser', Auth::user() );
         }
 
         return View::make( $view, $this->parameters );
     }
 
-    protected function _convertObjectsToPresenters($objects)
+    protected function convertObjectsToPresenters($objects)
     {
         $results = array();
         foreach( $objects as $key => $object ) {
-            $results[$key] = $this->_convertObjectToPresenter($object);
+            $results[$key] = $this->convertObjectToPresenter($object);
         }
 
         return $results;
     }
 
-    protected function _convertObjectToPresenter($object)
+    protected function convertObjectToPresenter($object)
     {
         if( $object instanceof PresentableInterface ) {
             return $object->getPresenter();
@@ -49,7 +50,7 @@ class BaseViewFactory {
         return $object;
     }
 
-    protected function _isCollection($value)
+    protected function isCollection($value)
     {
         return is_array($value) || ($value instanceof \Illuminate\Support\Collection);
     }

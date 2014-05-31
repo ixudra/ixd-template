@@ -3,7 +3,7 @@
 
 class BaseRepository {
 
-    protected function _preProcessFilters($filters)
+    protected function preProcessFilters($filters)
     {
         foreach( $filters as $key => $value ) {
             if( $value === true ) {
