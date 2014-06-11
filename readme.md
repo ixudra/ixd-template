@@ -31,13 +31,15 @@ There are several actions that need to be to be executed before development of a
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
 
- ## CodeCeption setup
+
+## CodeCeption setup
+
  - Run composer update (if you haven't done so already
  - Modify and replace YourAppName in the database configuration in codeception.yml
  - Modify and replace YourAppName in the application url in app/tests/acceptance.suite.yml
  - Create a database dump of your test database (empty tables and/or static data) and move it to app/tests/_data/dump.sql
  - Run vendor/bin/codecept build command to build test guys for testing purposes (should be repeated every time you change modules for a suite)
- - Run vendor/bim/codecept run to run all test suites
+ - Run vendor/bin/codecept run to run all test suites
  - Run vendor/bin/codecept run --coverage-html to run all test suites with HTML code coverage
 
 
