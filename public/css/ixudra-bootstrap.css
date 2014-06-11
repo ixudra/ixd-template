@@ -1,0 +1,38 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.navbar-nav.nav-justified > li{
+    float: none;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+}
+
+.banner {
+    width: 320px;
+    height: 80px;
+}
+
+.model-filter {
+    height: 40px;
+}
+
+.table tr {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.table td {
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+}
