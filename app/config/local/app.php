@@ -41,6 +41,13 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        // Production service providers
+        'Ixudra\Validation\ValidationServiceProvider',
+
+        // Development service providers
+        'Ixudra\Generators\GeneratorsServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+
     ),
 
     'manifest'          => storage_path().'/meta',
@@ -84,6 +91,11 @@ return array(
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
         'View'              => 'Illuminate\Support\Facades\View',
+
+        // Production service providers
+
+        // Development service providers
+        'Debugbar'          => 'Barryvdh\Debugbar\Facade',
 
     )
 

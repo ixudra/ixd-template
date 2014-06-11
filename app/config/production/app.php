@@ -41,6 +41,9 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        // Production service providers
+        'Ixudra\Validation\ValidationServiceProvider',
+
     ),
 
     'manifest'          => storage_path().'/meta',
@@ -84,6 +87,8 @@ return array(
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
         'View'              => 'Illuminate\Support\Facades\View',
+
+        // Production service providers
 
     )
 
