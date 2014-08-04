@@ -5,7 +5,7 @@ class HomeController extends BaseController {
 
     public function index()
     {
-        return View::make('bootstrap.home.hello');
+        return View::make('bootstrap.home.index');
     }
 
 }

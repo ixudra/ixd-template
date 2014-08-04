@@ -25,7 +25,6 @@ Route::group(array('before' => 'guest'), function()
 
 
 Route::get(     '',                     array('as' => 'index',                      'uses' => 'HomeController@index'));
-Route::get(     '/',                    array('as' => 'index2',                     'uses' => 'HomeController@index'));
 
 
 
