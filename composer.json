@@ -14,6 +14,7 @@
         "phpunit/phpunit": "4.0.*",
         "codeception/codeception": "dev-master",
         "barryvdh/laravel-debugbar": "1.*",
+        "barryvdh/laravel-ide-helper": "1.10.0",
         "ixudra/generators": "0.1.*"
     },
 
@@ -40,7 +41,9 @@
         ],
         "post-update-cmd": [
             "php artisan optimize",
-            "php artisan debugbar:publish"
+            "php artisan debugbar:publish",
+            "php artisan clear-compiled",
+            "php artisan ide-helper:generate"
         ]
     },
 
