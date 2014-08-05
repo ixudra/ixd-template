@@ -3,6 +3,8 @@
 
 abstract class BaseModel extends Eloquent {
 
+    protected $translationKey = '';
+
     protected $validated = false;
 
     protected $validators = array(
@@ -11,17 +13,55 @@ abstract class BaseModel extends Eloquent {
     );
 
 
-    public function isValidated()
+    public function make($input)
     {
-        return $this->validated;
+        $response = new BaseModelResponse($this, $input);
+
+        $validator = App::make( $this->getValidator() );
+        $validator->setAttributes($input);
+        if( $validator->fails() ) {
+            $response->addNotifications('error', $validator->getErrors());
+
+            return $response;
+        }
+
+        $this->fill( $input );
+        $this->validated = true;
+
+        $response->addNotifications('success', array($this->translationKey .'.create.success'), true);
+
+        return $response;
     }
 
+    public function modify($input)
+    {
+        $response = new BaseModelResponse($this, $input);
 
-    public abstract function make($input);
+        $validator = App::make( $this->getValidator() );
+        $validator->setAttributes($input);
+        if( $validator->fails() ) {
+            $response->addNotifications('error', $validator->getErrors());
 
-    public abstract function modify($input);
+            return $response;
+        }
 
-    public abstract function remove();
+        $this->fill( $input );
+        $this->validated = true;
+
+        $response->addNotifications('success', array($this->translationKey .'.edit.success'), true);
+
+        return $response;
+    }
+
+    public function remove()
+    {
+        $this->delete();
+
+        $response = new BaseModelResponse();
+        $response->addNotifications('success', array($this->translationKey .'.delete.success'), true);
+
+        return $response;
+    }
 
     public function isValid($validationKey = 'default')
     {
@@ -55,6 +95,11 @@ abstract class BaseModel extends Eloquent {
         return $this->save( array( 'validator' => 'testing' ) );
     }
 
+    public function isValidated()
+    {
+        return $this->validated;
+    }
+
 
     public static function getDefaults() { return array(); }
 
@@ -65,28 +110,6 @@ abstract class BaseModel extends Eloquent {
         }
 
         return $this->validators[ $validationKey ];
-    }
-
-    protected function _convertToTruthyValue($input, $key)
-    {
-        if( !array_key_exists( $key, $input ) ) {
-            return false;
-        }
-
-        if( $input[ $key ] == 0 ) {
-            return false;
-        }
-
-        return true;
-    }
-
-    protected function _convertToArray($input, $key)
-    {
-        if( array_key_exists( $key, $input ) ) {
-            return $input[$key];
-        }
-
-        return array();
     }
 
 }
