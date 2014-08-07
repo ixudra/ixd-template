@@ -28,7 +28,9 @@
             "app/services",
             "app/database/migrations",
             "app/database/seeds",
-            "app/tests/unit/base"
+            "app/tests/unit/base",
+            "app/tests/functional/base",
+            "app/tests/acceptance/base"
         ]
     },
 

@@ -1,12 +1,12 @@
 <?php
 
 
-class BaseRepositoryTestCase extends BaseTestCase {
+class BaseRepositoryTestCase extends BaseFunctionalTestCase {
 
     protected function assertCollectionWithOnlyInstancesOf($type, $items)
     {
         foreach( $items as $item ) {
-            $this->assertInstanceOf($type, $item);
+            $this->assertInstanceOf( $type, $item );
         }
     }
 
@@ -17,7 +17,7 @@ class BaseRepositoryTestCase extends BaseTestCase {
 
             foreach( $expected as $key => $value ) {
                 if( $object->id == $value->id ) {
-                    unset( $expected[$key]);
+                    unset( $expected[$key] );
                     $found = true;
                     break;
                 }

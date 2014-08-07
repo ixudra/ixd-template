@@ -1,7 +1,7 @@
 <?php
 
 
-class TranslationHelperTest extends BaseTestCase {
+class TranslationHelperTest extends BaseUnitTestCase {
 
     protected $translationHelper = null;
 

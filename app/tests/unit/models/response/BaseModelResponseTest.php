@@ -1,7 +1,7 @@
 <?php
 
 
-class BaseModelResponseTest extends BaseTestCase {
+class BaseModelResponseTest extends BaseUnitTestCase {
 
     protected $baseModelResponse;
 

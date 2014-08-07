@@ -1,7 +1,7 @@
 <?php
 
 
-class BaseViewFactoryTestCase extends BaseTestCase {
+class BaseViewFactoryTestCase extends BaseUnitTestCase {
 
     protected function assertViewName($view, $expected)
     {
@@ -26,7 +26,7 @@ class BaseViewFactoryTestCase extends BaseTestCase {
 
     protected function assertViewNotNull($view, $primary)
     {
-        $this->assertNotNull($view->getData()[$primary] );
+        $this->assertNotNull( $view->getData()[$primary] );
     }
 
     protected function assertViewInstanceOf($view, $primary, $instance)
