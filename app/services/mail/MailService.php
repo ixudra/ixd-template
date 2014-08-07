@@ -3,7 +3,7 @@
 
 class MailService {
 
-    protected function _sendMail( $template, $parameters, $senderMail, $senderName, $receiverMail, $subject )
+    protected function sendMail($template, $parameters, $senderMail, $senderName, $receiverMail, $subject)
     {
         Mail::send($template, $parameters, function($message) use ($senderMail, $senderName, $receiverMail, $subject)
         {
