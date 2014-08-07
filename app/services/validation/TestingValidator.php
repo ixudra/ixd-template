@@ -7,7 +7,7 @@ class TestingValidator extends BaseModelValidator {
 
     protected $messages = array();
 
-    protected function _preProcessAttributes($attributes)
+    protected function preProcessAttributes($attributes)
     {
         return $attributes;
     }

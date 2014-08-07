@@ -14,7 +14,7 @@ class BaseModelValidator {
 
     public function setAttributes($attributes)
     {
-        $this->attributes = $this->_preProcessAttributes( $attributes );
+        $this->attributes = $this->preProcessAttributes( $attributes );
     }
 
 
@@ -50,7 +50,7 @@ class BaseModelValidator {
         return $this->validator->errors()->all();
     }
 
-    protected function _preProcessAttributes($attributes)
+    protected function preProcessAttributes($attributes)
     {
         return $attributes;
     }
