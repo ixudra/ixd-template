@@ -17,3 +17,12 @@ modules:
             dump: app/tests/_data/dump.sql
             populate: true
             cleanup: true
+coverage:
+    enabled: true
+    whitelist:
+        include:
+            - app/controllers/*
+            - app/models/*
+            - app/presenters/*
+            - app/repositories/*
+            - app/services/*
