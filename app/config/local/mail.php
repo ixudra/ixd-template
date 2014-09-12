@@ -1,26 +1,24 @@
 <?php
 
-return array(
 
-    'driver'            => 'smtp',
+    return array(
 
-    'host'              => 'smtp.mailgun.org',
+        'driver'            => 'smtp',
 
-    'port'              => 587,
+        'host'              => 'smtp.mandrillapp.com',
 
-    'from'              => array(
-        'address'           => null,
-        'name'              => null
-    ),
+        'port'              => 587,
 
-    'encryption'        => 'tls',
+        'username'          => 'jan.oris@ixudra.be',
 
-    'username'          => null,
+        'password'          => 'YourApiKey',
 
-    'password'          => null,
+        'from'              => array( 'address' => '', 'name' => '' ),
 
-    'sendmail'          => '/usr/sbin/sendmail -bs',
+        'encryption'        => 'tls',
 
-    'pretend'           => false,
+        'sendmail'          => '/usr/sbin/sendmail -bs',
 
-);
+        'pretend'           => false,
+
+    );

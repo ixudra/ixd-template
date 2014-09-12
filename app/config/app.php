@@ -110,7 +110,6 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         // Production service providers
-        'Ixudra\Validation\ValidationServiceProvider',
 
     ),
 

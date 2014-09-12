@@ -5,16 +5,16 @@
 
     "require": {
         "laravel/framework": "4.2.*",
-        "ixudra/validation": "0.1.*",
+        "ixudra/validation": "1.*",
         "laracasts/presenter": "0.1.*"
     },
 
     "require-dev": {
         "mockery/mockery": "dev-master",
-        "phpunit/phpunit": "4.0.*",
+        "phpunit/phpunit": "4.1.*",
         "codeception/codeception": "dev-master",
         "barryvdh/laravel-debugbar": "1.*",
-        "barryvdh/laravel-ide-helper": "1.10.0",
+        "barryvdh/laravel-ide-helper": "1.*",
         "ixudra/generators": "0.1.*"
     },
 

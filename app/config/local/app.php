@@ -12,7 +12,7 @@ return array(
 
     'key'               => 'YourSecretKey!!!',
 
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher'            => MCRYPT_RIJNDAEL_128,
 
     'providers'         => array(
 
@@ -44,7 +44,6 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         // Production service providers
-        'Ixudra\Validation\ValidationServiceProvider',
 
         // Development service providers
         'Ixudra\Generators\GeneratorsServiceProvider',
