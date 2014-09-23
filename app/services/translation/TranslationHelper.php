@@ -30,11 +30,11 @@ class TranslationHelper {
 
     public function translateRecursive($message, $attributes = array(), $ucFirst = true)
     {
-        $translation = Lang::get($message);
         if( !Lang::has( $message ) ) {
             return $message;
         }
 
+        $translation = Lang::get($message);
         foreach( $attributes as $key => $value ) {
             $translation = str_replace( ':'. $key, $value, $translation );
         }

@@ -67,6 +67,16 @@ class TranslationHelperTest extends BaseUnitTestCase {
     /**
      * @covers TranslationHelper::translateRecursive()
      */
+    public function testTranslateRecursive_returnsKeyIfNoTranslationExists()
+    {
+        Lang::shouldReceive('has')->once()->with('admin.menu.title.new')->andReturn(false);
+
+        $this->assertEquals('admin.menu.title.new', $this->translationHelper->translateRecursive('admin.menu.title.new', array('model' => 'user')));
+    }
+
+    /**
+     * @covers TranslationHelper::translateRecursive()
+     */
     public function testTranslateRecursive_translatesMultipleMarkers()
     {
         Lang::shouldReceive('has')->once()->with('admin.menu.title.new')->andReturn(true);
