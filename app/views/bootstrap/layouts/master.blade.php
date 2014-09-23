@@ -56,8 +56,8 @@
         </div>
         <nav class="navbar navbar-inverse navbar-fixed-bottom">
             <ul class="nav navbar-nav nav-justified">
-                <li><a href='#'>About</a></li>
-                <li><a href='#'>Report a bug</a></li>
+                <li>{{ HTML::link('http://ixudra.be', App::make('TranslationHelper')->translateRecursive('admin.createdBy')) }}</li>
+                <li>{{ HTML::linkRoute('admin.reportBug.show', App::make('TranslationHelper')->translateRecursive('admin.menu.title.reportBug')) }}</li>
             </ul>
         </nav>
     </footer>

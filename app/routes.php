@@ -7,13 +7,21 @@
 
 Route::group(array('before' => ''), function()
 {
-
+    Route::get(     '',                                 array('as' => 'index',                              'uses' => 'HomeController@index'));
 });
 
 
 Route::group(array('before' => 'auth'), function()
 {
 
+});
+
+
+Route::group(array('before' => 'auth', 'prefix' => 'admin'), function()
+{
+    Route::get(     '',                                 array('as' => 'admin.index',                        'uses' => 'AdminController@index'));
+    Route::get(     'reportBug',                        array('as' => 'admin.reportBug.show',               'uses' => 'AdminController@reportBug'));
+    Route::post(    'reportBug',                        array('as' => 'admin.reportBug.process',            'uses' => 'AdminController@processReportBug'));
 });
 
 
@@ -24,10 +32,6 @@ Route::group(array('before' => 'guest'), function()
 
 
 
-Route::get(     '',                     array('as' => 'index',                      'uses' => 'HomeController@index'));
-
-
-
 
 /**
  * Validator resolving
@@ -35,7 +39,7 @@ Route::get(     '',                     array('as' => 'index',                  
 
 //Validator::resolver(function($translator, $data, $rules, $messages)
 //{
-//    return new IxudraValidator($translator, $data, $rules, $messages);
+//    return new YourAppNameValidator($translator, $data, $rules, $messages);
 //});
 
 

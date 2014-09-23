@@ -2,6 +2,25 @@
 
     return array(
 
+        // Menu items
+        'email.change'                      => 'change email address',
+        'password.change'                   => 'change password',
+        'password.reset'                    => 'reset password',
+        'login'                             => 'login',
+        'logout'                            => 'logout',
+        'register'                          => 'register',
+        'profile'                           => 'profile',
+
+        // Members
+        'email.old'                         => 'current email address',
+        'email.new'                         => 'new email address',
+        'email.confirm'                     => 'confirm email address',
+
+        'password.old'                      => 'current password',
+        'password.new'                      => 'new password',
+        'password.confirm'                  => 'confirm password',
+
+        // Flash messages
         'registration.success'              => 'Your registration has been completed successfully.',
 
         'confirmation.codeNotFound'         => 'This confirmation code cannot be found in the database.',

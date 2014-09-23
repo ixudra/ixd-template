@@ -50,6 +50,11 @@ class BaseModelValidator {
         return $this->validator->errors()->all();
     }
 
+    public function getFailures()
+    {
+        return $this->validator->failures();
+    }
+
     protected function preProcessAttributes($attributes)
     {
         return $attributes;

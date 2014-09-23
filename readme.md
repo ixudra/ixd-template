@@ -22,6 +22,12 @@ There are several actions that need to be to be executed before development of a
  - Modify and replace YourAppName in the database setup in ```app/config/local/database.php```
  - Modify and replace YourAppName in the database setup in ```app/config/testing/database.php```
  - Modify and replace YourAppName in the database setup in ```app/config/production/database.php```
+ - Add a new API key in ```app/config/local/mail.php```
+ - Add a new API key in ```app/config/mail.php```
+ - Modify and replace YourAppName in ```app/config/mail.php```
+ - Modify and replace YourAppName in ```app/services/mail/MailService.php```
+ - Modify and replace YourAppName in ```app/routes.php```
+ - Modify and replace YourAppName in ```app/services/validators/YourAppNameValidator.php```
  - Modify and replace YourAppName in the PHPUnit setup in ```app/phpunit.xml```
  - Modify and replace YourAppName and Jenkins path in the PHPdox input in ```app/build/input/phpdox-ixudra.xml```
  - Run ```composer update --no-scripts```
@@ -32,9 +38,6 @@ There are several actions that need to be to be executed before development of a
  - Enter your secret key in the application setup in ```app/config/production/app.php```
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
- - Add a new API key in ```app\config\local\mail.php```
- - Add a new API key in ```app\config\mail.php```
- - Change sender name and email in ```app\config\mail.php```
 
 
 ## CodeCeption setup
