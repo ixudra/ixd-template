@@ -11,6 +11,9 @@
     {{ HTML::style('vendor/jquery-ui/css/jquery-ui-1.10.3.css') }}
     {{ HTML::style('/css/ixudra-bootstrap.css') }}
 
+    {{ HTML::script('vendor/jquery/js/jquery-2.0.2.js') }}
+    {{ HTML::script('vendor/restfulizer/restfulizer.js') }}
+
     @yield('style')
 
     @yield('header-scripts')
@@ -44,11 +47,10 @@
             @yield('modals')
         </div>
         <div id="scripts">
-            {{ HTML::script('vendor/jquery/js/jquery-2.0.2.js') }}
             {{ HTML::script('vendor/jquery-ui/js/jquery-ui-1.10.3.js') }}
             {{ HTML::script('vendor/bootstrap/js/bootstrap.js') }}
-            {{ HTML::script('vendor/datepicker/js/bootstrap-datepicker.js') }}
-            {{ HTML::script('vendor/timepicker/jquery.ui.timepicker.js') }}
+            {{ HTML::script('vendor/moment/moment-2.8.1.js') }}
+            {{ HTML::script('vendor/datetimepicker/js/bootstrap-datetimepicker.js') }}
 
             @yield('scripts')
         </div>
