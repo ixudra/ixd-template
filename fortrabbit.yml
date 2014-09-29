@@ -1,0 +1,14 @@
+---
+
+version: 1
+
+strategy: fullsync
+
+excludes:
+    - app/storage/
+    - public/uploads/
+    - vendor/
+
+composer:
+    mode: always
+    method: install
