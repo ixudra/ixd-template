@@ -21,6 +21,7 @@ coverage:
     enabled: true
     whitelist:
         include:
+            - app/commands/*
             - app/controllers/*
             - app/models/*
             - app/presenters/*
