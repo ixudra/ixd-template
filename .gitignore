@@ -9,15 +9,6 @@
 /app/tests/_log
 
 
-/app/config/local/
-/app/config/testing/
-/app/config/fortrabbit/
-/app/config/production/
-
-
-/.env*.php
-
-
 composer.phar
 
 

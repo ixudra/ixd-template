@@ -18,6 +18,9 @@ There are several actions that need to be to be executed before development of a
  - Add a new remote for your repository: ```git remote add origin https://urlToYourApp```
  - Add, commit and push your files to the repository
  - Add url and custom packages to ```app/config/app.php``` (if necessary)
+ - Add url and custom packages to ```app/config/local/app.php``` (if necessary)
+ - Add url and custom packages to ```app/config/testing/app.php``` (if necessary)
+ - Add url and custom packages to ```app/config/production/app.php``` (if necessary)
  - Modify and replace YourAppName in the environment names in ```app/bootstrap/start.php```
  - Modify and replace YourAppName in the database setup in ```app/config/local/database.php```
  - Modify and replace YourAppName in the database setup in ```app/config/testing/database.php```

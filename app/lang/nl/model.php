@@ -11,4 +11,6 @@
         'delete.success'                    => ':article :model is met succes verwijderd.',
         'delete.error'                      => 'Er is iets misgelopen bij het verwijderen van :article :model.',
 
+        'error.notFound'                    => ':article :model kon niet gevonden worden in de database.',
+
     );
