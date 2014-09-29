@@ -5,7 +5,7 @@ class MailService {
 
     public function mailBugReport($parameters)
     {
-        $this->sendMail('bootstrap.emails.bugReport', $parameters, 'info@yourAppName.be', 'yourAppName.be admin', 'jan.oris@gmail.com', 'A new bug report was filed for yourAppName.be');
+        $this->sendMail('bootstrap.emails.reportBug', $parameters, 'info@yourAppName.be', 'yourAppName.be admin', 'jan.oris@gmail.com', 'A new bug report was filed for yourAppName.be');
     }
 
     protected function sendMail($template, $parameters, $senderMail, $senderName, $receiverMail, $subject)
