@@ -20,11 +20,9 @@ There are several actions that need to be to be executed before development of a
  - Add url and custom packages to ```app/config/app.php``` (if necessary)
  - Add url and custom packages to ```app/config/local/app.php``` (if necessary)
  - Add url and custom packages to ```app/config/testing/app.php``` (if necessary)
- - Add url and custom packages to ```app/config/production/app.php``` (if necessary)
  - Modify and replace YourAppName in the environment names in ```app/bootstrap/start.php```
  - Modify and replace YourAppName in the database setup in ```app/config/local/database.php```
  - Modify and replace YourAppName in the database setup in ```app/config/testing/database.php```
- - Modify and replace YourAppName in the database setup in ```app/config/production/database.php```
  - Add a new API key in ```app/config/local/mail.php```
  - Add a new API key in ```app/config/mail.php```
  - Modify and replace YourAppName in ```app/config/mail.php```
@@ -38,7 +36,6 @@ There are several actions that need to be to be executed before development of a
  - Generate a private key
  - Enter your secret key in the application setup in ```app/config/local/app.php```
  - Enter your secret key in the application setup in ```app/config/testing/app.php```
- - Enter your secret key in the application setup in ```app/config/production/app.php```
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
 
