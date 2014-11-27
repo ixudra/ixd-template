@@ -6,6 +6,7 @@
     "require": {
         "laravel/framework": "4.2.*",
         "ixudra/validation": "1.*",
+        "ixudra/translation": "1.*",
         "laracasts/presenter": "0.1.*"
     },
 
@@ -15,7 +16,7 @@
         "codeception/codeception": "dev-master",
         "barryvdh/laravel-debugbar": "1.*",
         "barryvdh/laravel-ide-helper": "1.*",
-        "ixudra/generators": "0.1.*"
+        "ixudra/generators": "1.*"
     },
 
     "autoload": {

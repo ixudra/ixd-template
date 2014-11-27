@@ -8,14 +8,6 @@ class BaseViewFactory {
         'messageValues'     => array()
     );
 
-    protected $translationHelper;
-
-
-    public function __construct(TranslationHelper $translationHelper)
-    {
-        $this->translationHelper = $translationHelper;
-    }
-
 
     public function notifyUser($type, $messages, $translate = true)
     {
@@ -45,7 +37,7 @@ class BaseViewFactory {
     {
         $results = array();
         foreach( $messages as $message ) {
-            array_push($results, $this->translationHelper->translateMessage($message));
+            array_push($results, Translate::message($message));
         }
 
         return $results;

@@ -9,12 +9,9 @@ class BaseModelResponse {
 
     protected $notifications;
 
-    protected $translationHelper;
-
 
     public function __construct($model = null, $input = null)
     {
-        $this->translationHelper = App::make('TranslationHelper');
         $this->model = $model;
         $this->input = $input;
         $this->notifications = array();
@@ -59,7 +56,7 @@ class BaseModelResponse {
         foreach( $notifications as $notification ) {
             $message = $notification;
             if( $translate ) {
-                $message = $this->translationHelper->translateModel($notification);
+                $message = Translate::model($notification);
             }
 
             array_push($this->notifications[$type], $message);

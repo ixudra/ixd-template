@@ -44,9 +44,7 @@ class BaseModelResponseTest extends BaseUnitTestCase {
      */
     public function testAddNotifications_translatesMessageIfParameterIsTrue()
     {
-        $translationHelperMock = Mockery::mock('TranslationHelper');
-        $translationHelperMock->shouldReceive('translateModel')->once()->with('Foo_1')->andReturn('Bar_1');
-        App::instance('TranslationHelper', $translationHelperMock);
+        Translate::shouldReceive('model')->once()->with('Foo_1')->andReturn('Bar_1');
 
         $this->baseModelResponse = new BaseModelResponse();
 

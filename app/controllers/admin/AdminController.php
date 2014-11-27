@@ -40,7 +40,7 @@ class AdminController extends BaseController {
             )
         );
 
-        $this->adminViewFactory->notifyUser('success', array( App::make('TranslationHelper')->translateRecursive('admin.reportBug.success') ));
+        $this->adminViewFactory->notifyUser('success', array( Translate::recursive('admin.reportBug.success') ));
 
         return $this->adminViewFactory->reportBug(null);
     }

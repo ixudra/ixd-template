@@ -44,6 +44,7 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         // Production service providers
+        'Ixudra\Translation\TranslationServiceProvider',
 
         // Development service providers
         'Ixudra\Generators\GeneratorsServiceProvider',
@@ -95,6 +96,7 @@ return array(
         'View'              => 'Illuminate\Support\Facades\View',
 
         // Production service providers
+        'Translate'         => 'Ixudra\Translation\Facades\Translation',
 
         // Development service providers
         'Debugbar'          => 'Barryvdh\Debugbar\Facade',
