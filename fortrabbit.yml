@@ -5,9 +5,10 @@ version: 1
 strategy: fullsync
 
 excludes:
-    - app/storage/
-    - public/uploads/
-    - vendor/
+    - /app/storage/
+    - /public/uploads/
+    - /vendor/
+    - /.env.php
 
 composer:
     mode: always
