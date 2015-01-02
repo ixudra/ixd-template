@@ -2,6 +2,13 @@
 
 
 /**
+ * Routing patterns
+ */
+
+Route::pattern('id', '[0-9]+');
+
+
+/**
  * Routing groups
  */
 
