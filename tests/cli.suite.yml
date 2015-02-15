@@ -1,0 +1,8 @@
+class_name: CliTester
+modules:
+    enabled:
+        - Db
+        - Filesystem
+        - Cli
+        - Laravel5
+        - CliHelper

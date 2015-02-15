@@ -1,0 +1,36 @@
+actor: Guy
+paths:
+    tests: tests
+    log: tests/_log
+    data: tests/_data
+    helpers: tests/_helpers
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        Db:
+            dsn: 'mysql:host=localhost;dbname=ixd_yourAppName_test'
+            user: 'plg_user_test'
+            password: 'plg_pwd_test'
+            dump: tests/_data/dump.sql
+            populate: true
+            cleanup: true
+        PhpBrowser:
+            url: http://yourAppName.dev/
+        REST:
+            url: http://yourAppName.dev/api/v1/
+        Laravel5:
+            environment_file: .env.testing
+coverage:
+    enabled: true
+    whitelist:
+        include:
+            - app/Commands/*
+            - app/Console/*
+            - app/Events/*
+            - app/Http/*
+            - app/Repositories/*
+            - app/Presenters/*
+            - app/Services/*

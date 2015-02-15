@@ -1,0 +1,106 @@
+body {
+    padding-top: 70px;
+    margin-bottom: 70px;
+}
+
+.navbar-nav.nav-justified > li {
+    float: none;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+}
+
+.banner {
+    width: 320px;
+    height: 80px;
+}
+
+.model-filter {
+    height: 40px;
+}
+
+.table tr {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.table td {
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+}
+
+.table-small {
+    width: 64px;
+}
+
+.table-actions {
+    width: 80px;
+}
+
+ul, ol .checklist {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.img-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.img-small {
+    width: 240px;
+}
+
+.img-medium {
+    width: 480px;
+}
+
+.btn-actions {
+    color: #333;
+    background-color: #fff;
+    border-color: #fff;
+}
+.btn-actions:hover,
+.btn-actions:focus,
+.btn-actions:active,
+.btn-actions.active,
+.open .dropdown-toggle.btn-actions {
+    color: #333;
+    background-color: #ebebeb;
+    border-color: #adadad;
+}
+.btn-actions:active,
+.btn-actions.active,
+.open .dropdown-toggle.btn-actions {
+    background-image: none;
+}
+.btn-actions.disabled,
+.btn-actions[disabled],
+fieldset[disabled] .btn-actions,
+.btn-actions.disabled:hover,
+.btn-actions[disabled]:hover,
+fieldset[disabled] .btn-actions:hover,
+.btn-actions.disabled:focus,
+.btn-actions[disabled]:focus,
+fieldset[disabled] .btn-actions:focus,
+.btn-actions.disabled:active,
+.btn-actions[disabled]:active,
+fieldset[disabled] .btn-actions:active,
+.btn-actions.disabled.active,
+.btn-actions[disabled].active,
+fieldset[disabled] .btn-actions.active {
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-actions .badge {
+    color: #fff;
+    background-color: #333;
+}
