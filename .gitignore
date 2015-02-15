@@ -22,3 +22,10 @@ composer.phar
 /app/config/packages
 /public/packages
 
+
+/node_modules
+
+
+.env
+
+
