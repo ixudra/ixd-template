@@ -31,6 +31,7 @@ coverage:
             - app/Console/*
             - app/Events/*
             - app/Http/*
+            - app/Models/*
             - app/Repositories/*
             - app/Presenters/*
             - app/Services/*

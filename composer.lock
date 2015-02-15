@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a00517822dd436747f72a7893dcbf43a",
+    "hash": "cfc9e024ada809b6100f23da13c16df1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -309,6 +309,54 @@
                 "password"
             ],
             "time": "2014-11-20 16:49:30"
+        },
+        {
+            "name": "ixudra/translation",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ixudra/translation.git",
+                "reference": "1436be060542d8ac29a79e28dd4269d0850426fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ixudra/translation/zipball/1436be060542d8ac29a79e28dd4269d0850426fd",
+                "reference": "1436be060542d8ac29a79e28dd4269d0850426fd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "illuminate/translation": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ixudra\\Translation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Oris",
+                    "email": "jan.oris@ixudra.be"
+                }
+            ],
+            "description": "Custom PHP translation library for the Laravel 5 framework - developed by Ixudra",
+            "homepage": "http://ixudra.be",
+            "keywords": [
+                "Ixudra",
+                "laravel",
+                "translation"
+            ],
+            "time": "2015-01-18 15:44:42"
         },
         {
             "name": "ixudra/validation",
@@ -1869,20 +1917,20 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "343dbc07007272511727c9272e568d707682fc24"
+                "reference": "77b9cc071f4bbd839923269668b14d308778d8b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/343dbc07007272511727c9272e568d707682fc24",
-                "reference": "343dbc07007272511727c9272e568d707682fc24",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/77b9cc071f4bbd839923269668b14d308778d8b0",
+                "reference": "77b9cc071f4bbd839923269668b14d308778d8b0",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.0.*",
+                "illuminate/support": "5.0.x",
                 "maximebf/debugbar": "~1.10.2",
                 "php": ">=5.4.0",
                 "symfony/finder": "~2.6"
@@ -1919,7 +1967,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-02-03 19:52:06"
+            "time": "2015-02-15 14:11:42"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2376,6 +2424,53 @@
                 "stream"
             ],
             "time": "2014-10-12 19:18:40"
+        },
+        {
+            "name": "ixudra/generators",
+            "version": "5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ixudra/generators.git",
+                "reference": "3b3d3d5e428334bf1710334a2c27223897908898"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ixudra/generators/zipball/3b3d3d5e428334bf1710334a2c27223897908898",
+                "reference": "3b3d3d5e428334bf1710334a2c27223897908898",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master@dev",
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ixudra\\Generators\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Oris",
+                    "email": "jan.oris@ixudra.be"
+                }
+            ],
+            "description": "Custom PHP resource generation library for the Laravel 5 framework - developed by Ixudra",
+            "homepage": "http://ixudra.be",
+            "keywords": [
+                "Ixudra",
+                "generator",
+                "laravel"
+            ],
+            "time": "2015-02-15 20:23:21"
         },
         {
             "name": "janhenkgerritsen/codeception-laravel5",

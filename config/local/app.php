@@ -146,11 +146,13 @@ return [
         'App\Providers\RouteServiceProvider',
 
         'Illuminate\Html\HtmlServiceProvider',
+        'Ixudra\Translation\TranslationServiceProvider',
 
 
         // Development Service Providers
 
-        'Barryvdh\Debugbar\ServiceProvider'
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Ixudra\Generators\GeneratorsServiceProvider',
 
     ],
 
@@ -203,6 +205,8 @@ return [
 
         'HTML'              => 'Illuminate\Html\HtmlFacade',
         'Form'              => 'Illuminate\Html\FormFacade',
+
+        'Translate'         => 'Ixudra\Translation\Facades\Translation',
 
 
         // Development Service Providers

@@ -1,0 +1,26 @@
+YourAppName web application - by Ixudra
+============================================
+ 
+## Getting started
+
+Clone this repository to a local folder. If everything is up and running, go through these steps to complete to setup:
+
+- Install packages via Composer: `composer install`
+- Add your machine hostname to the environment names in `bootstrap/start.php`
+- Create migrations table: `php artisan migrate:install`
+- Run migrations and seeders: `php artisan migrate:refresh --seed`
+
+
+
+## License
+
+Proprietary software - do not distribute
+
+
+
+## Contact
+
+Jan Oris (developer)
+
+- Email: jan.oris@ixudra.be
+- Telephone: +32 496 94 20 57

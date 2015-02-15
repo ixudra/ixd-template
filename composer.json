@@ -19,6 +19,7 @@
         "laravel/framework": "5.0.*",
         "illuminate/html": "5.0.*",
         "ixudra/validation": "1.*",
+        "ixudra/translation": "2.*",
         "laracasts/presenter": "0.2.*"
     },
 
@@ -29,6 +30,7 @@
         "phpspec/phpspec": "~2.1",
         "codeception/codeception": "~2.0",
         "janhenkgerritsen/codeception-laravel5": "1.*",
+        "ixudra/generators": "5.*",
         "barryvdh/laravel-debugbar": "2.*",
         "barryvdh/laravel-ide-helper": "2.*"
     },

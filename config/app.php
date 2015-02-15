@@ -146,6 +146,7 @@ return [
         'App\Providers\RouteServiceProvider',
 
         'Illuminate\Html\HtmlServiceProvider',
+        'Ixudra\Translation\TranslationServiceProvider',
 
 	],
 
@@ -200,6 +201,8 @@ return [
 
         'HTML'              => 'Illuminate\Html\HtmlFacade',
         'Form'              => 'Illuminate\Html\FormFacade',
+
+        'Translate'         => 'Ixudra\Translation\Facades\Translation',
 
 	],
 
