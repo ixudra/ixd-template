@@ -12,8 +12,8 @@ modules:
     config:
         Db:
             dsn: 'mysql:host=localhost;dbname=ixd_yourAppName_test'
-            user: 'plg_user_test'
-            password: 'plg_pwd_test'
+            user: 'yan_user_test'
+            password: 'yan_pwd_test'
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true

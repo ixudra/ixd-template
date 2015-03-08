@@ -25,10 +25,10 @@ There are several actions that need to be to be executed before development of a
  - Add, commit and push your files to the repository
  - Add url and custom packages to `Config/app.php` (if necessary)
  - Add url and custom packages to `Config/local/app.php` (if necessary)
- - Change the name of `.env.example` to `.env`
+ - Change the name of `.env.example` to `.env`: `mv .env.example .env`
  - Modify and replace temporary values in `.env`
  - Modify and replace temporary values in `.env.testing`
- - Change the name of `readme.example` to `readme.md`
+ - Change the name of `readme.example` to `readme.md`: `rm readme.md` - `mv readme.example readme.md`
  - Modify and replace temporary values in `readme.md`
  - Modify and replace YourAppName in `App/Services/validators/AppValidator.php`
  - Modify and replace YourAppName in `App/Services/validators/AppValidatorTrait.php`
