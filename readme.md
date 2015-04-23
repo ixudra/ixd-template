@@ -30,6 +30,7 @@ There are several actions that need to be to be executed before development of a
  - Add redirect to your hosts file
  - Change the name of `readme.example` to `readme.md`: `rm -rf readme.md && mv readme.example readme.md`
  - Modify and replace temporary values in `readme.md`
+ - Modify and replace temporary values in `composer.json`
 
 
 ## CodeCeption setup
