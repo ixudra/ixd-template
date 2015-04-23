@@ -43,7 +43,7 @@ There are several actions that need to be to be executed before development of a
  - Create a database dump of your test database (empty tables and/or static data) and move it to `app/tests/_data/dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/dump.sql`
  - Create a database dump of your API test database (empty tables and/or static data) and move it to `app/tests/_data/acceptance-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/acceptance-dump.sql`
  - Create a database dump of your API test database (empty tables and/or static data) and move it to `app/tests/_data/api-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/api-dump.sql`
- - Run `sudo vendor/bin/codecept build` command to build test helpers for testing purposes (should be repeated every time you change modules for a suite)
+ - Run `sudo vendor/bin/codecept build` to build test helpers for testing purposes (should be repeated every time you change modules for a suite)
  - Run `sudo vendor/bin/codecept run` to run all test suites
  - Run `sudo vendor/bin/codecept run --coverage-html` to run all test suites with HTML code coverage
 
