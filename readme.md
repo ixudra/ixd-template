@@ -8,16 +8,9 @@ This template can be used by anyone at any given time, but keep in mind that it 
 
 ## New project setup
  
-Clone this repository to a local folder. If everything is up and running, go through these steps to complete to setup:
-
-- Install packages via Composer: `composer install`
-- Add your machine hostname to the environment names in `bootstrap/start.php`
-- Create migrations table: `php artisan migrate:install`
-- Run migrations and seeders: `php artisan migrate:refresh --seed`
-
 There are several actions that need to be to be executed before development of a new application can start:
 
- - Download the template into a new directory: `git clone git@github.com:ixudra/ixd-template.git YourAppName`
+ - Download the template into a new directory: `git clone git@github.com:ixudra/ixd-template.git yourAppName`
  - Remove the existing git repository: `rm -rf YourAppName/.git`
  - Initialize a new git repository inside the YourAppName directory: `git init`
  - Add your name and email to the .git config: `vim .git/config`
@@ -36,7 +29,7 @@ There are several actions that need to be to be executed before development of a
  - Replace YourAppName in `resources/views/bootstrap/layouts/menu-top.blade.php`
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
- - Change the name of `readme.example` to `readme.md`: `rm readme.md` - `mv readme.example readme.md`
+ - Change the name of `readme.example` to `readme.md`: `rm -rf readme.md && mv readme.example readme.md`
  - Modify and replace temporary values in `readme.md`
 
 
@@ -46,12 +39,12 @@ There are several actions that need to be to be executed before development of a
  - Modify and replace YourAppName in the database configuration in `codeception.yml`
  - Modify and replace YourAppName in the application url in `app/tests/acceptance.suite.yml`
  - Modify and replace YourAppName in the application url in `app/tests/api.suite.yml`
- - Create a database dump of your test database (empty tables and/or static data) and move it to `app/tests/_data/dump.sql`: `mysqldump -u root -proot --no-data ixd_kavo_tool > tests/_data/dump.sql`
- - Create a database dump of your API test database (empty tables and/or static data) and move it to `app/tests/_data/acceptance-dump.sql`: `mysqldump -u root -proot --no-data ixd_kavo_tool > tests/_data/acceptance-dump.sql`
- - Create a database dump of your API test database (empty tables and/or static data) and move it to `app/tests/_data/api-dump.sql`: `mysqldump -u root -proot --no-data ixd_kavo_tool > tests/_data/api-dump.sql`
- - Run `vendor/bin/codecept build` command to build test guys for testing purposes (should be repeated every time you change modules for a suite)
- - Run `vendor/bin/codecept run` to run all test suites
- - Run `vendor/bin/codecept run --coverage-html` to run all test suites with HTML code coverage
+ - Create a database dump of your test database (empty tables and/or static data) and move it to `app/tests/_data/dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/dump.sql`
+ - Create a database dump of your API test database (empty tables and/or static data) and move it to `app/tests/_data/acceptance-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/acceptance-dump.sql`
+ - Create a database dump of your API test database (empty tables and/or static data) and move it to `app/tests/_data/api-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/api-dump.sql`
+ - Run `sudo vendor/bin/codecept build` command to build test guys for testing purposes (should be repeated every time you change modules for a suite)
+ - Run `sudo vendor/bin/codecept run` to run all test suites
+ - Run `sudo vendor/bin/codecept run --coverage-html` to run all test suites with HTML code coverage
 
 
 ## License
