@@ -148,6 +148,12 @@ return [
         'Illuminate\Html\HtmlServiceProvider',
         'Ixudra\Translation\TranslationServiceProvider',
 
+
+        // Development Service Providers
+
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Ixudra\Generators\GeneratorsServiceProvider',
+
 	],
 
 	/*
@@ -203,6 +209,11 @@ return [
         'Form'              => 'Illuminate\Html\FormFacade',
 
         'Translate'         => 'Ixudra\Translation\Facades\Translation',
+
+
+        // Development Service Providers
+
+        'Debugbar'          => 'Barryvdh\Debugbar\Facade',
 
 	],
 
