@@ -6,9 +6,18 @@ YourAppName web application - by Ixudra
 Clone this repository to a local folder. If everything is up and running, go through these steps to complete to setup:
 
 - Install packages via Composer: `composer install`
-- Add your machine hostname to the environment names in `bootstrap/start.php`
 - Create migrations table: `php artisan migrate:install`
 - Run migrations and seeders: `php artisan migrate:refresh --seed`
+
+
+## CodeCeption unit tests
+
+ - Run composer update (if you haven't done so already)
+ - Create a test database with the name `yan_yourAppName`
+ - Create a database user the following credentials: `yan_user_test` - `yan_pwd_test` and make sure this user has access to the test database
+ - Run `sudo vendor/bin/codecept build` to build test helpers for testing purposes (should be repeated every time you change modules for a suite)
+ - Run `sudo vendor/bin/codecept run` to run all test suites
+ - Run `sudo vendor/bin/codecept run --coverage-html` to run all test suites with HTML code coverage (requires XDebug)
 
 
 
