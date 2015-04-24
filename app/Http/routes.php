@@ -1,20 +1,40 @@
 <?php
 
 
-Route::get('/', 'HomeController@index');
+/**
+ * Routing patterns
+ */
+
+Route::pattern('id', '[0-9]+');
+
+
+
+/**
+ * Routing groups
+ */
+
+Route::group(array('before' => ''), function()
+{
+    Route::get(     '',                                         array('as' => 'index',                                      'uses' => 'HomeController@index'));
+});
+
+
+Route::group(array('prefix' => 'ajax'), function()
+{
+    // ...
+});
+
+
+Route::group(array('prefix' => 'admin'), function()
+{
+    // ...
+});
+
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
-
-
-
-
-Route::group(array('prefix' => 'admin'), function()
-{
-    //...
-});
 
 
 
