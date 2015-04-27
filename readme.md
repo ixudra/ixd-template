@@ -6,6 +6,7 @@ This is a project template for any future Laravel 5 project that will be develop
 This template can be used by anyone at any given time, but keep in mind that it is optimized for my personal custom workflow. It may not suit your project perfectly and modifications may be in order.
 
 
+
 ## New project setup
  
 There are several actions that need to be to be executed before development of a new application can start:
@@ -33,10 +34,11 @@ There are several actions that need to be to be executed before development of a
  - Modify and replace temporary values in `composer.json`
 
 
+
 ## CodeCeption setup
 
  - Run composer update (if you haven't done so already)
- - Create a test database with the name `yan_yourAppName`
+ - Create a test database with the name `ixd_yourAppName_test`
  - Create a database user the following credentials: `yan_user_test` - `yan_pwd_test` and make sure this user has access to the test database
  - Modify and replace YourAppName in the database configuration in `codeception.yml`
  - Modify and replace YourAppName in the application url in `app/tests/acceptance.suite.yml`
@@ -47,6 +49,7 @@ There are several actions that need to be to be executed before development of a
  - Run `sudo vendor/bin/codecept build` to build test helpers for testing purposes (should be repeated every time you change modules for a suite)
  - Run `sudo vendor/bin/codecept run` to run all test suites
  - Run `sudo vendor/bin/codecept run --coverage-html` to run all test suites with HTML code coverage
+
 
 
 ## License
