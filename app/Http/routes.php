@@ -44,12 +44,6 @@ Route::group(array('prefix' => 'admin'), function()
 });
 
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
-
-
 
 /**
  * Validator resolving
