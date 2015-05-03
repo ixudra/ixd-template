@@ -6,6 +6,7 @@
  */
 
 Route::pattern('id', '[0-9]+');
+Route::pattern('slug', '[a-z0-9-]+');
 
 
 
@@ -13,9 +14,21 @@ Route::pattern('id', '[0-9]+');
  * Routing groups
  */
 
-Route::group(array('before' => ''), function()
+Route::group(array(), function()
 {
     Route::get(     '',                                         array('as' => 'index',                                      'uses' => 'HomeController@index'));
+});
+
+
+Route::group(array('middleware' => 'guest'), function()
+{
+    // ...
+});
+
+
+Route::group(array('middleware' => 'auth'), function()
+{
+    // ...
 });
 
 
