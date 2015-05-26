@@ -9,6 +9,10 @@ class WhoopsExceptionHandler extends BaseExceptionHandler {
 
     public function render($request, Exception $e)
     {
+        if( env('APP_ENV') == 'testing' ) {
+            return parent::render($request, $e);
+        }
+
         $whoops = new \Whoops\Run;
 
         if( $request->ajax() ) {

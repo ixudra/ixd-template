@@ -121,4 +121,8 @@ return [
 
 	'pretend' => false,
 
+    'send'              => env('MAIL_SEND', false),
+
+    'recipient'         => env('MAIL_RECIPIENT', ''),
+
 ];

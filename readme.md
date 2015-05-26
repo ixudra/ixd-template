@@ -27,6 +27,7 @@ There are several actions that need to be to be executed before development of a
  - Enter your secret key in the application in `.env.testing`
  - Replace YourAppName in `resources/views/bootstrap/layouts/master.blade.php`
  - Replace YourAppName in `resources/views/bootstrap/layouts/menu-top.blade.php`
+ - Replace YourAppName in `app/Services/Mail/MailService.php`
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
  - Change the name of `readme.example` to `readme.md`: `rm -rf readme.md && mv readme.example readme.md`
