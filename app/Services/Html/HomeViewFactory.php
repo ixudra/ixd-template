@@ -7,7 +7,7 @@ class HomeViewFactory extends BaseViewFactory {
 
     public function index()
     {
-        return $this->makeView('bootstrap.home.index');
+        return $this->makeView( env('THEME_FRONTEND') .'.home.index' );
     }
 
 }
