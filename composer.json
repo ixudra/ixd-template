@@ -33,7 +33,6 @@
         "phpspec/phpspec": "~2.1",
         "codeception/codeception": "2.*",
         "codeception/c3": "2.*",
-        "janhenkgerritsen/codeception-laravel5": "1.*",
         "ixudra/generators": "5.*",
         "barryvdh/laravel-debugbar": "2.*",
         "barryvdh/laravel-ide-helper": "2.*"

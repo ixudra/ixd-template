@@ -20,6 +20,7 @@ modules:
         PhpBrowser:
             url: http://yourAppName.dev/
         REST:
+            depends: PhpBrowser
             url: http://yourAppName.dev/api/v1/
         Laravel5:
             environment_file: .env.testing
@@ -27,10 +28,11 @@ coverage:
     enabled: true
     whitelist:
         include:
-            - app/Commands/*
             - app/Console/*
             - app/Events/*
             - app/Http/*
+            - app/Jobs/*
+            - app/Listeners/*
             - app/Models/*
             - app/Repositories/*
             - app/Presenters/*
