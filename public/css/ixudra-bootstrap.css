@@ -104,3 +104,9 @@ fieldset[disabled] .btn-actions.active {
     color: #fff;
     background-color: #333;
 }
+
+.form-group.required .control-label:after {
+    content: "*";
+    color: #d43f3a;
+    padding-left: 5px;
+}
