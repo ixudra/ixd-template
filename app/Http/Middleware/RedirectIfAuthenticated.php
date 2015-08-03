@@ -1,29 +1,40 @@
 <?php namespace App\Http\Middleware;
 
-use Illuminate\Contracts\Auth\Guard;
-use Ixudra\Core\Traits\RedirectableTrait;
 
 use Closure;
-use Translate;
+use Illuminate\Contracts\Auth\Guard;
 
-class RedirectIfAuthenticated {
-
-    use RedirectableTrait;
-
-
+class RedirectIfAuthenticated
+{
+    /**
+     * The Guard implementation.
+     *
+     * @var Guard
+     */
     protected $auth;
 
-
+    /**
+     * Create a new filter instance.
+     *
+     * @param  Guard  $auth
+     * @return void
+     */
     public function __construct(Guard $auth)
     {
         $this->auth = $auth;
     }
 
-
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
     public function handle($request, Closure $next)
     {
-        if( $this->auth->check() ) {
-            return $this->redirect('index', array(), 'error', array(Translate::recursive('authentication.login.alreadyLoggedIn')));
+        if ($this->auth->check()) {
+            return redirect('/home');
         }
 
         return $next($request);

@@ -2,10 +2,9 @@
 
 
 use Closure;
-use Illuminate\Contracts\Routing\Middleware;
 use Illuminate\Contracts\Foundation\Application;
 
-class ReplaceTestVars implements Middleware {
+class ReplaceTestVars {
 
     protected $app;
 
