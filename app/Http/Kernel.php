@@ -15,8 +15,9 @@ class Kernel extends HttpKernel {
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        'App\Http\Middleware\ReplaceTestVars',
+        \App\Http\Middleware\ReplaceTestVars::class,
         \App\Http\Middleware\VerifyCsrfToken::class,
+        \Ixudra\Core\Http\Middleware\DisableOpcache::class,
     ];
 
     /**

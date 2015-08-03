@@ -144,22 +144,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // Application Service Providers
-
-        'App\Providers\AppServiceProvider',
-        'App\Providers\BusServiceProvider',
-        'App\Providers\ConfigServiceProvider',
-        'App\Providers\EventServiceProvider',
-        'App\Providers\RouteServiceProvider',
-
-        'Illuminate\Html\HtmlServiceProvider',
-        'Ixudra\Translation\TranslationServiceProvider',
-
-
-        // Development Service Providers
-
-        'Barryvdh\Debugbar\ServiceProvider',
-        'Ixudra\Generators\GeneratorsServiceProvider',
+        Illuminate\Html\HtmlServiceProvider::class,
+        Ixudra\Translation\TranslationServiceProvider::class,
 
     ],
 
@@ -212,15 +198,10 @@ return [
 
         // Application Facades
 
-        'HTML'              => 'Illuminate\Html\HtmlFacade',
-        'Form'              => 'Illuminate\Html\FormFacade',
+        'HTML'              => Illuminate\Html\HtmlFacade::class,
+        'Form'              => Illuminate\Html\FormFacade::class,
 
-        'Translate'         => 'Ixudra\Translation\Facades\Translation',
-
-
-        // Development Service Providers
-
-        'Debugbar'          => 'Barryvdh\Debugbar\Facade',
+        'Translate'         => Ixudra\Translation\Facades\Translation::class,
 
     ],
 
