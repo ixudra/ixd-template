@@ -6,7 +6,7 @@
 /build/coverage
 
 
-/app/tests/_log
+/tests/_log
 
 
 composer.phar
