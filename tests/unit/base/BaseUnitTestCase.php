@@ -3,6 +3,9 @@
 
 class BaseUnitTestCase extends Illuminate\Foundation\Testing\TestCase {
 
+    protected $baseUrl = 'http://yourAppName.dev';
+
+
     public function setUp()
     {
         parent::setUp();
