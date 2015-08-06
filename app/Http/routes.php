@@ -71,7 +71,7 @@ Form::macro('openFormGroup', function($name = '', $errors = null, $requiredField
         $style .=' required';
     }
 
-    return '<div class="form-group '. $style .'">';
+    return '<div class="form-group col-lg-12 '. $style .'">';
 });
 
 Form::macro('closeFormGroup', function($name = '', $errors = null, $showErrors = true)
