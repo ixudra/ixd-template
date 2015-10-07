@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://yourAppName.dev',
+    'url' => env('APP_URL', 'http://yourAppName.dev'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -145,6 +145,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Illuminate\Html\HtmlServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Ixudra\Translation\TranslationServiceProvider::class,
 
     ],

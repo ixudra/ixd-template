@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
-        <li>{!! HTML::linkRoute('index', 'YourAppName', array(), array('class' => 'navbar-brand')) !!}</li>
+        {!! HTML::linkRoute('index', 'YourAppName', array(), array('class' => 'navbar-brand')) !!}
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">

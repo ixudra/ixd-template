@@ -28,7 +28,7 @@ Route::group(array('middleware' => 'guest'), function()
 
 Route::group(array('middleware' => 'auth'), function()
 {
-    // ...
+    Route::get(     'logs',                                     array('as' => 'logs',                                       'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
 });
 
 

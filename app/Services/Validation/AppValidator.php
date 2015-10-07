@@ -18,7 +18,6 @@ class AppValidator extends \Illuminate\Validation\Validator {
     use DateValidationTrait;
     use TimeValidationTrait;
     use FileValidationTrait;
-    use JsonValidationTrait;
     use UserValidationTrait;
     use ArrayValidationTrait;
     use StringValidationTrait;

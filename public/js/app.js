@@ -1,15 +1,10 @@
 $(document).ready(function() {
 
     $('.datePicker').datetimepicker({
-        pickDate: true,
-        pickTime: false,
-        language: 'en'
+        format: 'YYYY-MM-DD'
     });
 
     $('.timePicker').datetimepicker({
-        pickDate: false,
-        pickTime: true,
-        pick12HourFormat: true,
         useMinutes: true,
         useSeconds: false,
         minuteStepping: 1,
