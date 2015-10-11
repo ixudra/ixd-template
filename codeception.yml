@@ -34,6 +34,7 @@ coverage:
             - app/Jobs/*
             - app/Listeners/*
             - app/Models/*
+            - app/Policies/*
             - app/Repositories/*
             - app/Presenters/*
             - app/Services/*
