@@ -17,7 +17,7 @@ class BaseUnitTestCase extends Illuminate\Foundation\Testing\TestCase {
     {
         $app = require __DIR__ .'/../../../bootstrap/app.php';
 
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
     }

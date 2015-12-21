@@ -1,11 +1,9 @@
-<?php namespace App\Http\Middleware;
+<?php
 
-
-use Illuminate\Contracts\Auth\Guard;
-use Ixudra\Core\Traits\RedirectableTrait;
+namespace App\Http\Middleware;
 
 use Closure;
-use Translate;
+use Illuminate\Support\Facades\Auth;
 
 class Authenticate {
 
