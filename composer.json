@@ -18,7 +18,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "illuminate/html": "~5.0",
+        "laravelcollective/html": "~5.2",
         "ixudra/core": "5.*",
         "ixudra/validation": "1.*",
         "ixudra/translation": "5.*",
@@ -27,12 +27,14 @@
     },
 
     "require-dev": {
+        "symfony/dom-crawler": "~3.0",
+        "symfony/css-selector": "~3.0",
         "phpunit/phpunit": "~4.4",
         "mockery/mockery": "~0.9",
         "fzaninotto/faker": "~1.4",
         "filp/whoops": "~1.0",
         "phpspec/phpspec": "~2.1",
-        "codeception/codeception": "2.*",
+        "codeception/codeception": "~2.0",
         "codeception/c3": "2.*",
         "ixudra/generators": "5.*",
         "barryvdh/laravel-debugbar": "2.*",

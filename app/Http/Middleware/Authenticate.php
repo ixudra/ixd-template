@@ -2,8 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Auth\Guard;
+use Ixudra\Core\Traits\RedirectableTrait;
+
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Translate;
 
 class Authenticate {
 
@@ -24,9 +27,9 @@ class Authenticate {
         if( $this->auth->guest() ) {
             if( $request->ajax() ) {
                 return response('Unauthorized.', 401);
-            } else {
-                return $this->redirect('login', array(), 'error', array(Translate::recursive('authentication.login.required')));
             }
+
+            return $this->redirect('login', array(), 'error', array(Translate::recursive('authentication.login.required')));
         }
 
         return $next( $request );

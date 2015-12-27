@@ -14,33 +14,33 @@ Route::pattern('slug', '[a-z0-9-]+');
  * Routing groups
  */
 
-Route::group(array(), function()
+Route::group(array('middleware' => array('web')), function()
 {
     Route::get(     '',                                         array('as' => 'index',                                      'uses' => 'HomeController@index'));
 });
 
 
-Route::group(array('middleware' => 'guest'), function()
+Route::group(array('middleware' => array('web', 'guest')), function()
 {
     // ...
 });
 
 
-Route::group(array('middleware' => 'auth'), function()
+Route::group(array('middleware' => array('web', 'auth')), function()
+{
+    // ...
+});
+
+
+Route::group(array('middleware' => array('web'), 'prefix' => 'ajax'), function()
+{
+    // ...
+});
+
+
+Route::group(array('middleware' => array('web'), 'prefix' => 'admin'), function()
 {
     Route::get(     'logs',                                     array('as' => 'logs',                                       'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
-});
-
-
-Route::group(array('prefix' => 'ajax'), function()
-{
-    // ...
-});
-
-
-Route::group(array('prefix' => 'admin'), function()
-{
-    // ...
 });
 
 

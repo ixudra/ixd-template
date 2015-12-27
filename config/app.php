@@ -156,7 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Illuminate\Html\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Ixudra\Translation\TranslationServiceProvider::class,
 
@@ -209,8 +209,8 @@ return [
 
         // Application Facades
 
-        'HTML'              => Illuminate\Html\HtmlFacade::class,
-        'Form'              => Illuminate\Html\FormFacade::class,
+        'HTML'              => Collective\Html\HtmlFacade::class,
+        'Form'              => Collective\Html\FormFacade::class,
 
         'Translate'         => Ixudra\Translation\Facades\Translation::class,
 
