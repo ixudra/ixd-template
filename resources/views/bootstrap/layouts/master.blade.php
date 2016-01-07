@@ -6,14 +6,9 @@
         <title>@yield('page-title', 'YourAppName')</title>
         <meta name="viewport" content="width=device-width">
 
-        {!! HTML::style('vendor/bootstrap/css/bootstrap.css') !!}
-        {!! HTML::style('vendor/jquery-ui/css/jquery-ui-1.10.3.css') !!}
-        {!! HTML::style('/css/ixudra-bootstrap.css') !!}
+        {!! HTML::style( elixir("css/app.css") ) !!}
 
         @yield('style')
-
-        {!! HTML::script('vendor/jquery/js/jquery-2.0.2.js') !!}
-        {!! HTML::script('vendor/restfulizer/restfulizer.js') !!}
 
         @yield('header-scripts')
     </head>
@@ -51,11 +46,8 @@
                     @yield('modals')
                 </div>
                 <div id="scripts">
-                    {!! HTML::script('vendor/jquery-ui/js/jquery-ui-1.10.3.js') !!}
-                    {!! HTML::script('vendor/bootstrap/js/bootstrap.js') !!}
-                    {!! HTML::script('vendor/moment/moment-2.8.1.js') !!}
-                    {!! HTML::script('vendor/datetimepicker/js/bootstrap-datetimepicker.js') !!}
-                    {!! HTML::script('/js/app.js') !!}
+
+                    {!! HTML::script( elixir("js/app.js") ) !!}
 
                     @yield('scripts')
                 </div>
