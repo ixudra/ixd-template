@@ -20,10 +20,10 @@ There are several actions that need to be to be executed before development of a
  - Add url and custom packages to `Config/app.php`
  - Change the name of `.env.example` to `.env`: `mv .env.example .env`
  - Modify and replace temporary values in `.env.testing`
- - Run `composer update`
+ - Run `composer install` first to prevent errors with pre-update scripts
+ - Run `composer update` to update update all packages to the latest versions
  - Run `php artisan key:generate` to generate a private key
  - Enter your secret key in the application in `.env`
- - Enter your secret key in the application in `.env.testing`
  - Replace YourAppName in `resources/views/bootstrap/layouts/master.blade.php`
  - Replace YourAppName in `resources/views/bootstrap/layouts/menu-top.blade.php`
  - Replace YourAppName in `app/Services/Mail/MailService.php`

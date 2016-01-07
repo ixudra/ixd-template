@@ -2,6 +2,7 @@
 
 
 use Exception;
+use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Http\Response;
 use App\Exceptions\Handler as BaseExceptionHandler;
 
@@ -11,6 +12,14 @@ class WhoopsExceptionHandler extends BaseExceptionHandler {
     {
         if( !env('APP_DEBUG') ) {
             return parent::render($request, $e);
+        }
+
+        // Laravel throws HttpResponseExceptions when validating through FormRequests. In this case,
+        // we don't want to render the exception but rather redirect the user to the form in order
+        // to show the error messages. This is handle by the framework, so we pass along the
+        // exception for further processing.
+        if( $e instanceof HttpResponseException ) {
+            return parent::render( $request, $e );
         }
 
         $whoops = new \Whoops\Run;
