@@ -32,15 +32,15 @@ Route::group(array('middleware' => array('web', 'auth')), function()
 });
 
 
-Route::group(array('middleware' => array('web'), 'prefix' => 'ajax'), function()
-{
-    // ...
-});
-
-
 Route::group(array('middleware' => array('web'), 'prefix' => 'admin'), function()
 {
     Route::get(     'logs',                                     array('as' => 'logs',                                       'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
+});
+
+
+Route::group(array('middleware' => array('web'), 'prefix' => 'ajax'), function()
+{
+    // ...
 });
 
 
@@ -71,7 +71,7 @@ Form::macro('openFormGroup', function($name = '', $errors = null, $requiredField
         $style .=' required';
     }
 
-    return '<div class="form-group col-lg-12 '. $style .'">';
+    return '<div class="form-group '. $style .'">';
 });
 
 Form::macro('closeFormGroup', function($name = '', $errors = null, $showErrors = true)
