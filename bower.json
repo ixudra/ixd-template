@@ -14,12 +14,12 @@
     "Jan oris <jan.oris@ixudra.be>"
   ],
   "dependencies": {
-    "jquery": "~2.1.0",
-    "jquery-ui": "~1.11.4",
-    "modernizr": "~2.7.1",
-    "bootstrap-sass": "~3.1",
-    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
-    "moment": "~2.11.0",
+    "jquery": "2.*",
+    "jquery-ui": "1.*",
+    "modernizr": "2.*",
+    "bootstrap-sass": "3.*",
+    "eonasdan-bootstrap-datetimepicker": "4.*",
+    "moment": "2.*",
     "restfulizer": "*"
   },
   "license": "MIT",

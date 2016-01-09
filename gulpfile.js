@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir');
 
 var paths = {
-    'bootstrap':        './vendor/bower_components/bootstrap-sass/vendor/assets/',
+    'bootstrap':        './vendor/bower_components/bootstrap-sass/assets/',
     'dateTimePicker':   './vendor/bower_components/eonasdan-bootstrap-datetimepicker/src/',
     'jquery':           './vendor/bower_components/jquery/',
     'jqueryUi':         './vendor/bower_components/jquery-ui/',
@@ -18,7 +18,7 @@ elixir(function(mix) {
         .sass("app.scss", 'resources/assets/css/app.css', {
             includePaths: [
                 paths.bootstrap + 'stylesheets/',
-                paths.dateTimePicker + 'sass/',
+                paths.dateTimePicker + 'sass/'
             ]
         })
 
@@ -29,7 +29,7 @@ elixir(function(mix) {
         .scripts([
             paths.jquery + "dist/jquery.js",
             paths.jqueryUi + "jquery-ui.js",
-            paths.bootstrap + "javascripts/bootstrap/*.js",
+            paths.bootstrap + "javascripts/bootstrap.js",
             paths.moment + "moment.js",
             paths.dateTimePicker + "js/bootstrap-datetimepicker.js",
             paths.restfulizer + "jquery.restfulizer.js",
