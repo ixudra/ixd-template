@@ -17,7 +17,7 @@ There are several actions that need to be to be executed before development of a
  - Add your name and email to the .git config: `vim .git/config`
  - Add a new remote for your repository: `git remote add origin https://urlToYourAppRepository`
  - Add, commit and push your files to the repository
- - Add url and custom packages to `Config/app.php`
+ - Add project name, url and custom packages to `Config/app.php`
  - Change the name of `.env.example` to `.env`: `mv .env.example .env`
  - Modify and replace temporary values in `.env.testing`
  - Run `composer install` first to prevent errors with pre-update scripts
