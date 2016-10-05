@@ -180,7 +180,7 @@ return [
          */
 
         Collective\Html\HtmlServiceProvider::class,
-        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Ixudra\Translation\TranslationServiceProvider::class,
 
     ],

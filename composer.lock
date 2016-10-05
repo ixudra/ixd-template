@@ -4,9 +4,131 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "777f0fbbe906ec8d2b0398f1b2849586",
-    "content-hash": "e373b3942b6be155e4160b2d00756a2a",
+    "hash": "cc1bd76834aeffd6a2e5d0be1c2622c9",
+    "content-hash": "0d91f12fee878b1f33de90290409ccfe",
     "packages": [
+        {
+            "name": "arcanedev/log-viewer",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/LogViewer.git",
+                "reference": "2c93f56a201851422667676c2f663f3064dc4d5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/LogViewer/zipball/2c93f56a201851422667676c2f663f3064dc4d5a",
+                "reference": "2c93f56a201851422667676c2f663f3064dc4d5a",
+                "shasum": ""
+            },
+            "require": {
+                "arcanedev/support": "~3.0",
+                "php": ">=5.6",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpcov": "~2.0|~3.0",
+                "phpunit/phpunit": "~4.0|~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Arcanedev\\LogViewer\\": "src/"
+                },
+                "files": [
+                    "constants.php",
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides a Log Viewer for Laravel 5",
+            "homepage": "https://github.com/ARCANEDEV/LogViewer",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "log",
+                "log viewer",
+                "log-viewer",
+                "logviewer"
+            ],
+            "time": "2016-10-02 13:25:46"
+        },
+        {
+            "name": "arcanedev/support",
+            "version": "3.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/Support.git",
+                "reference": "ca5bfaed3e74dd8b652e7fcde19fc72fdaee4018"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/Support/zipball/ca5bfaed3e74dd8b652e7fcde19fc72fdaee4018",
+                "reference": "ca5bfaed3e74dd8b652e7fcde19fc72fdaee4018",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpcov": "~2.0|~3.0",
+                "phpunit/phpunit": "~4.0|~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Arcanedev\\Support\\": "src/"
+                },
+                "files": [
+                    "constants.php",
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc"
+                }
+            ],
+            "description": "ARCANEDEV Support Helpers",
+            "homepage": "https://github.com/ARCANEDEV/Support",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "support"
+            ],
+            "time": "2016-09-27 17:09:07"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -1230,52 +1352,6 @@
                 "uuid"
             ],
             "time": "2016-10-02 15:51:17"
-        },
-        {
-            "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v0.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "3ff06fb16e9cf8bfb581d29bd7da3cd3c0baa5d7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/3ff06fb16e9cf8bfb581d29bd7da3cd3c0baa5d7",
-                "reference": "3ff06fb16e9cf8bfb581d29bd7da3cd3c0baa5d7",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "4.2.*|5.*",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/controllers"
-                ],
-                "psr-0": {
-                    "Rap2hpoutre\\LaravelLogViewer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "rap2hpoutre",
-                    "email": "raphaelht@gmail.com"
-                }
-            ],
-            "description": "A Laravel log reader",
-            "keywords": [
-                "log",
-                "log-reader",
-                "log-viewer",
-                "logging"
-            ],
-            "time": "2016-06-23 14:07:52"
         },
         {
             "name": "swiftmailer/swiftmailer",
