@@ -1,6 +1,6 @@
 class_name: FunctionalTester
 modules:
     enabled:
-        - Db
+        - Helper\Functional
+        - Asserts
         - Laravel5
-        - FunctionalHelper

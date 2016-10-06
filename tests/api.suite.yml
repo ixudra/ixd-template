@@ -1,16 +1,8 @@
 class_name: ApiTester
 modules:
     enabled:
-        - Db
-        - PhpBrowser
-        - REST
+        - Helper\Api
+        - Asserts
+        - REST:
+            depends: Laravel5
         - Laravel5
-        - ApiHelper
-    config:
-        Db:
-            dsn: 'mysql:host=localhost;dbname=ixd_yourAppName_test'
-            user: 'yan_user_test'
-            password: 'yan_pwd_test'
-            dump: tests/_data/api-dump.sql
-            populate: true
-            cleanup: true

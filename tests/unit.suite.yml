@@ -1,6 +1,5 @@
 class_name: UnitTester
 modules:
     enabled:
+        - \Helper\Unit
         - Laravel5
-        - Asserts
-        - UnitHelper

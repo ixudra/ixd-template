@@ -112,4 +112,8 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
+    'send'              => env('MAIL_SEND', false),
+
+    'recipient'         => env('MAIL_RECIPIENT', ''),
+
 ];

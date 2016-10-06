@@ -1,9 +1,9 @@
-actor: Guy
+actor: Tester
 paths:
     tests: tests
-    log: tests/_log
+    log: tests/_output
     data: tests/_data
-    helpers: tests/_helpers
+    helpers: tests/_support
 settings:
     bootstrap: _bootstrap.php
     colors: true
@@ -17,24 +17,25 @@ modules:
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
-        PhpBrowser:
-            url: http://yourAppName.dev/
         REST:
-            depends: PhpBrowser
+            depends: Laravel5
             url: http://yourAppName.dev/api/v1/
         Laravel5:
             environment_file: .env.testing
 coverage:
     enabled: true
-    whitelist:
-        include:
-            - app/Console/*
-            - app/Events/*
-            - app/Http/*
-            - app/Jobs/*
-            - app/Listeners/*
-            - app/Models/*
-            - app/Policies/*
-            - app/Repositories/*
-            - app/Presenters/*
-            - app/Services/*
+    include:
+        - app/Console/*
+        - app/Events/*
+        - app/Http/*
+        - app/Jobs/*
+        - app/Listeners/*
+        - app/Models/*
+        - app/Policies/*
+        - app/Repositories/*
+        - app/Presenters/*
+        - app/Scopes/*
+        - app/Services/*
+    exclude:
+        - app/Http/routes.php
+        - app/Http/Kernel.php

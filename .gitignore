@@ -6,7 +6,13 @@
 /build/coverage
 
 
-/tests/_log
+/tests/_output
+/tests/_support/_generated
+/tests/acceptance/AcceptanceTester.php
+/tests/api/ApiTester.php
+/tests/cli/CliTester.php
+/tests/functional/FunctionalTester.php
+/tests/unit/UnitTester.php
 
 
 composer.phar
