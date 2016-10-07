@@ -3,6 +3,20 @@
 
 class BaseViewFactoryTestCase extends BaseUnitTestCase {
 
+    protected function setViewExpectations($view, $parameters = array())
+    {
+        $parameters = array_merge(
+            array(
+                'messageType'       => '',
+                'messageValues'     => array(),
+                'prefix'            => ''
+            ),
+            $parameters
+        );
+
+        View::shouldReceive('make')->with( $view, $parameters );
+    }
+
     protected function assertViewName($view, $expected)
     {
         $this->assertEquals( $expected, $view->getName() );
