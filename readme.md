@@ -17,7 +17,7 @@ There are several actions that need to be to be executed before development of a
  - Add your name and email to the .git config: `vim .git/config`
  - Add a new remote for your repository: `git remote add origin https://urlToYourAppRepository`
  - Add, commit and push your files to the repository
- - Add project name, url and custom packages to `Config/app.php`
+ - Add project name, url and custom packages to `config/app.php`
  - Change the name of `.env.example` to `.env`: `mv .env.example .env`
  - Modify and replace temporary values in `.env.testing`
  - Run `composer install` first to prevent errors with pre-update scripts
@@ -26,6 +26,7 @@ There are several actions that need to be to be executed before development of a
  - Enter your secret key in the application in `.env`
  - Replace YourAppName in `resources/views/bootstrap/layouts/master.blade.php`
  - Replace YourAppName in `resources/views/bootstrap/layouts/menu-top.blade.php`
+ - Replace YourAppName in `resources/views/vendor/log-viewer/_template/navigation.blade.php`
  - Replace YourAppName in `app/Services/Mail/MailService.php`
  - Add new virtual host to apache hosts file + restart apache server
  - Add redirect to your hosts file
@@ -56,6 +57,7 @@ There are several actions that need to be to be executed before development of a
  - Modify and replace YourAppName in the application url in `tests/acceptance.suite.yml`
  - Modify and replace YourAppName in the application url in `tests/api.suite.yml`
  - Modify and replace yourAppName in the base url in `tests/unit/base/BaseUnitTestCase.php`
+ - Modify and replace yourAppName in the base url in `tests/unit/base/BaseControllerTestCase.php`
  - Create a database dump of your test database (empty tables and/or static data) and move it to `tests/_data/dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/dump.sql`
  - Create a database dump of your API test database (empty tables and/or static data) and move it to `tests/_data/acceptance-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/acceptance-dump.sql`
  - Create a database dump of your API test database (empty tables and/or static data) and move it to `tests/_data/api-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/api-dump.sql`

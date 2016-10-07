@@ -2,6 +2,6 @@
     {{--@if( Auth::check() )
         <li>{!! HTML::linkRoute('admin.users.index', Translate::recursive('admin.menu.title.index', array('model' => 'user'))) !!}</li>
         <hr />
-        <li>{!! HTML::linkRoute('logs', 'Logs') !!}</li>
+        <li>{!! HTML::linkRoute('log-viewer::dashboard', 'Logs') !!}</li>
     @endif--}}
 </ul>

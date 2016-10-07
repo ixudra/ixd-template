@@ -8,9 +8,6 @@
                 <span class="icon-bar"></span>
             </button>
             {!! HTML::linkRoute('index', 'YourAppName', array(), array('class' => 'navbar-brand')) !!}
-            <a href="{{ route('log-viewer::dashboard') }}" class="navbar-brand">
-                <i class="fa fa-fw fa-book"></i> LogViewer
-            </a>
         </div>
         <ul class="nav navbar-nav">
             <li class="{{ Route::is('log-viewer::dashboard') ? 'active' : '' }}">

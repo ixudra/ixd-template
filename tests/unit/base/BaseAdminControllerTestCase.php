@@ -1,6 +1,6 @@
 <?php
 
 
-class BaseAdminControllerTestCase extends BaseUnitTestCase {
+class BaseAdminControllerTestCase extends BaseControllerTestCase {
 
 }

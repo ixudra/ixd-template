@@ -3,4 +3,5 @@ modules:
     enabled:
         - Helper\Functional
         - Asserts
+        - Db
         - Laravel5
