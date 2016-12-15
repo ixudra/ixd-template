@@ -1,26 +1,22 @@
 var elixir = require('laravel-elixir');
 
 var paths = {
-    'bootstrap':        './vendor/bower_components/bootstrap-sass/assets/',
-    'dateTimePicker':   './vendor/bower_components/eonasdan-bootstrap-datetimepicker/src/',
-    'jquery':           './vendor/bower_components/jquery/',
-    'jqueryUi':         './vendor/bower_components/jquery-ui/',
-    'modernizr':        './vendor/bower_components/modernizr/',
-    'moment':           './vendor/bower_components/moment/',
-    'momentTimezone':   './vendor/bower_components/moment-timezone/',
-    'restfulizer':      './vendor/bower_components/restfulizer/'
+    'bootstrap':        './node_modules/bootstrap-sass/assets/',
+    'dateTimePicker':   './node_modules/eonasdan-bootstrap-datetimepicker/src/',
+    'jquery':           './node_modules/jquery/',
+    'modernizr':        './node_modules/modernizr/',
+    'moment':           './node_modules/moment/',
+    'momentTimezone':   './node_modules/moment-timezone/',
+    'restfulizer':      './node_modules/restfulizerjs/'
 };
 
 elixir(function(mix) {
     mix
 
         // Compile SASS files
-        .sass("app.scss", 'resources/assets/css/app.css', {
-            includePaths: [
-                paths.bootstrap + 'stylesheets/',
-                paths.dateTimePicker + 'sass/'
-            ]
-        })
+        .sass([
+                'app.scss'
+            ], 'resources/assets/css/app.css')
 
         // Copy fonts to public directory
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
@@ -28,7 +24,6 @@ elixir(function(mix) {
         // Combine Javascript files
         .scripts([
             paths.jquery + "dist/jquery.js",
-            paths.jqueryUi + "jquery-ui.js",
             paths.bootstrap + "javascripts/bootstrap.js",
             paths.moment + "moment.js",
             paths.dateTimePicker + "js/bootstrap-datetimepicker.js",
@@ -38,7 +33,6 @@ elixir(function(mix) {
 
         // Combine stylesheets
         .styles([
-            paths.jqueryUi + "base/*.css",
             "app.css"
         ], 'public/css/app.css')
 

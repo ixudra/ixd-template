@@ -1,5 +1,5 @@
 
-@import "bootstrap";                        // Default Twitter Bootstrap
-@import "bootstrap-datetimepicker-build";   // datetimepicker library styles
-@import "ixudra-bootstrap";                 // Custom Bootstrap modifications
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";                                       // Default Twitter Bootstrap
+@import "node_modules/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build.scss";    // datetimepicker library styles
+@import "ixudra-bootstrap";                                                                               // Custom Bootstrap modifications
 

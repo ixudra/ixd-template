@@ -40,10 +40,8 @@ There are several actions that need to be to be executed before development of a
 
  - Install the latest version of nodeJS if you haven't done so already (see [nodejs.org](https://nodejs.org/en/download/) for detailed instructions)
  - Install NPM globally if you haven't done so already: `sudo apt-get install npm`
- - Install Bower globally if you haven't done so already: `sudo npm install -g bower`
  - Install Gulp globally if you haven't done so already: `sudo npm install -g gulp`
  - Pull in NPM dependencies: `npm install`
- - Pull in Bower dependencies: `bower install`
  - Run Gulp to generate the CSS and Javascript files: `gulp`
 
 
