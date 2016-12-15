@@ -109,6 +109,26 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Theme
+    |--------------------------------------------------------------------------
+    |
+    | These keys are used to indicate which themes are to be used to indicate
+    | which themes are to be used in your application. They allow you to
+    | set different themes for the front-end and admin components of the app
+    |
+    */
+
+    'themes' => array(
+
+        'frontend' => env('THEME_FRONTEND'),
+
+        'admin' => env('THEME_ADMIN'),
+
+    ),
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Logging Configuration
     |--------------------------------------------------------------------------
     |

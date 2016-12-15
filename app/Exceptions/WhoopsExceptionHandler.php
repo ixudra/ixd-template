@@ -1,16 +1,18 @@
 <?php namespace App\Exceptions;
 
 
-use Exception;
 use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Http\Response;
 use App\Exceptions\Handler as BaseExceptionHandler;
+
+use Exception;
+use Config;
 
 class WhoopsExceptionHandler extends BaseExceptionHandler {
 
     public function render($request, Exception $e)
     {
-        if( !env('APP_DEBUG') ) {
+        if( !Config::get('app.debug') ) {
             return parent::render($request, $e);
         }
 

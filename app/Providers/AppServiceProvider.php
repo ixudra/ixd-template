@@ -11,6 +11,8 @@ use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Ixudra\Generators\GeneratorsServiceProvider;
 use App\Services\Validation\AppValidator;
 
+use Config;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -34,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if( $this->app->environment('local') ) {
+        if( Config::get('app.env') === 'local' ) {
             $this->app->register( DebugBarServiceProvider::class );
             $this->app->register( IdeHelperServiceProvider::class );
             $this->app->register( GeneratorsServiceProvider::class );
