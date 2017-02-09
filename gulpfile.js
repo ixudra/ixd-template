@@ -15,11 +15,11 @@ elixir(function(mix) {
 
         // Compile SASS files
         .sass([
-                'app.scss'
-            ], 'resources/assets/css/app.css')
+                './resources/assets/bootstrap/sass/app.scss'
+            ], 'resources/assets/bootstrap/css/app.css')
 
         // Copy fonts to public directory
-        .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
+        .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/bootstrap/fonts')
 
         // Combine Javascript files
         .scripts([
@@ -28,14 +28,14 @@ elixir(function(mix) {
             paths.moment + "moment.js",
             paths.dateTimePicker + "js/bootstrap-datetimepicker.js",
             paths.restfulizer + "jquery.restfulizer.js",
-            "resources/assets/js/app.js"
-        ], 'public/js/app.js', './')
+            "resources/assets/bootstrap/js/app.js"
+        ], 'public/bootstrap/js/app.js', './')
 
         // Combine stylesheets
         .styles([
-            "app.css"
-        ], 'public/css/app.css')
+            "./resources/assets/bootstrap/css/app.css"
+        ], 'public/bootstrap/css/app.css')
 
         // Version stylesheet and javascript file
-        .version(["css/app.css", "js/app.js"]);
+        .version(["bootstrap/css/app.css", "bootstrap/js/app.js"]);
 });

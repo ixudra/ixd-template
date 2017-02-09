@@ -1,7 +1,7 @@
 <?php namespace App\Exceptions;
 
 
-use Illuminate\Http\Exception\HttpResponseException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 use App\Exceptions\Handler as BaseExceptionHandler;
 

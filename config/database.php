@@ -59,8 +59,8 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
             'engine' => null,
@@ -103,17 +103,23 @@ return [
     | provides a richer set of commands than a typical key-value systems
     | such as APC or Memcached. Laravel makes it easy to dig right in.
     |
-    */
+    */'redis' => [
 
-    'redis' => [
+        'client' => 'predis',
 
-        'cluster' => false,
+        'options' => [
+            'cluster' => 'redis',
+        ],
 
-        'default' => [
-            'host' => env('REDIS_HOST', 'localhost'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
-            'database' => 0,
+        'clusters' => [
+            'default' => [
+                [
+                    'host' => env('REDIS_HOST', '127.0.0.1'),
+                    'password' => env('REDIS_PASSWORD', null),
+                    'port' => env('REDIS_PORT', 6379),
+                    'database' => 0,
+                ],
+            ],
         ],
 
     ],

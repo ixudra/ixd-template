@@ -19616,5 +19616,7 @@ $(document).ready(function() {
 
     $(".rest").restfulizer();
 
+    window.axios = require('axios');
+
 });
 //# sourceMappingURL=app.js.map

@@ -13,4 +13,6 @@ $(document).ready(function() {
 
     $(".rest").restfulizer();
 
+    window.axios = require('axios');
+
 });

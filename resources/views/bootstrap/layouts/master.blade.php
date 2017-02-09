@@ -6,7 +6,7 @@
         <title>@yield('page-title', 'YourAppName')</title>
         <meta name="viewport" content="width=device-width">
 
-        {!! HTML::style( elixir("css/app.css") ) !!}
+        {!! HTML::style( elixir("bootstrap/css/app.css") ) !!}
 
         @yield('style')
 
@@ -47,18 +47,10 @@
                 </div>
                 <div id="scripts">
 
-                    {!! HTML::script( elixir("js/app.js") ) !!}
+                    {!! HTML::script( elixir("bootstrap/js/app.js") ) !!}
 
                     @yield('scripts')
                 </div>
-                @if( Auth::check() )
-                    <nav class="navbar navbar-inverse navbar-fixed-bottom">
-                        <ul class="nav navbar-nav nav-justified">
-                            {{--<li>{!! HTML::link('http://ixudra.be', App::make('TranslationHelper')->translateRecursive('admin.createdBy')) !!}</li>--}}
-                            {{--<li>{!! HTML::linkRoute('admin.reportBug.show', App::make('TranslationHelper')->translateRecursive('admin.menu.title.reportBug')) !!}</li>--}}
-                        </ul>
-                    </nav>
-                @endif
             </footer>
         </div>
     </body>
