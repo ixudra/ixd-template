@@ -6,7 +6,7 @@
         <title>@yield('page-title', 'YourAppName')</title>
         <meta name="viewport" content="width=device-width">
 
-        {!! HTML::style( elixir("bootstrap/css/app.css") ) !!}
+        {!! HTML::style( mix("bootstrap/css/app.css") ) !!}
 
         @yield('style')
 
@@ -47,7 +47,7 @@
                 </div>
                 <div id="scripts">
 
-                    {!! HTML::script( elixir("bootstrap/js/app.js") ) !!}
+                    {!! HTML::script( mix("bootstrap/js/app.js") ) !!}
 
                     @yield('scripts')
                 </div>

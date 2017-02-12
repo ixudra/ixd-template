@@ -40,9 +40,8 @@ There are several actions that need to be to be executed before development of a
 
  - Install the latest version of nodeJS if you haven't done so already (see [nodejs.org](https://nodejs.org/en/download/) for detailed instructions)
  - Install NPM globally if you haven't done so already: `sudo apt-get install npm`
- - Install Gulp globally if you haven't done so already: `sudo npm install -g gulp`
  - Pull in NPM dependencies: `npm install`
- - Run Gulp to generate the CSS and Javascript files: `gulp`
+ - Run Gulp to generate the CSS and Javascript files: `npm run dev`
 
 
 
@@ -52,9 +51,6 @@ There are several actions that need to be to be executed before development of a
  - Create a test database with the name `ixd_yourAppName_test`
  - Create a database user the following credentials: `yan_user_test` - `yan_pwd_test` and make sure this user has access to the test database
  - Modify and replace YourAppName in the database configuration in `codeception.yml`
- - Modify and replace YourAppName in the application url in `tests/acceptance.suite.yml`
- - Modify and replace YourAppName in the application url in `tests/api.suite.yml`
- - Modify and replace yourAppName in the base url in `tests/unit/base/BaseUnitTestCase.php`
  - Modify and replace yourAppName in the base url in `tests/unit/base/BaseControllerTestCase.php`
  - Create a database dump of your test database (empty tables and/or static data) and move it to `tests/_data/dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/dump.sql`
  - Create a database dump of your API test database (empty tables and/or static data) and move it to `tests/_data/acceptance-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/acceptance-dump.sql`

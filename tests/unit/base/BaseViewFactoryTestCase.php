@@ -8,7 +8,7 @@ class BaseViewFactoryTestCase extends BaseUnitTestCase {
         $parameters = array_merge(
             array(
                 'messageType'       => '',
-                'messageValues'     => array(),
+                'messages'          => array(),
                 'prefix'            => ''
             ),
             $parameters
@@ -50,7 +50,7 @@ class BaseViewFactoryTestCase extends BaseUnitTestCase {
 
     protected function assertViewDataSize($view, $primary, $size)
     {
-        $this->assertEquals( $size, sizeof($view->getData()[$primary]) );
+        $this->assertEquals( $size, count($view->getData()[$primary]) );
     }
 
 }

@@ -34,7 +34,7 @@ body {
 .table td {
     padding-left: 4px;
     padding-right: 4px;
-    text-align: center;
+    text-align: left;
 }
 
 .table-small {
@@ -109,4 +109,16 @@ fieldset[disabled] .btn-actions.active {
     content: "*";
     color: #d43f3a;
     padding-left: 5px;
+}
+
+.form-group.required .control-label-left:after {
+    content: "*";
+    color: #d43f3a;
+    padding-left: 5px;
+}
+
+.form-horizontal .control-label-left {
+    margin-bottom: 0;
+    padding: 7px 15px 7px 15px;
+    text-align: left;
 }
