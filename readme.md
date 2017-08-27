@@ -1,6 +1,8 @@
 Ixudra project template
 ============================================
 
+[![license](https://img.shields.io/github/license/ixudra/ixd-template.svg)]()
+
 This is a project template for any future Laravel 5 project that will be developed by [Ixudra](http://ixudra.be), a Belgian PHP development company owned by Jan Oris. It is modified to use Laravel 5.
 
 This template can be used by anyone at any given time, but keep in mind that it is optimized for my personal custom workflow. It may not suit your project perfectly and modifications may be in order.

@@ -1,5 +1,15 @@
 
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";                                       // Default Twitter Bootstrap
-@import "node_modules/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build.scss";    // datetimepicker library styles
-@import "ixudra-bootstrap";                                                                               // Custom Bootstrap modifications
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Bootstrap datetimepicker library styles
+@import "~eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build.scss";
+
+// Custom Bootstrap modifications
+@import "ixudra-bootstrap";
