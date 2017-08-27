@@ -21,6 +21,7 @@ There are several actions that need to be to be executed before development of a
  - Add, commit and push your files to the repository
  - Add project name, url and custom packages to `config/app.php`
  - Change the name of `.env.example` to `.env`: `mv .env.example .env`
+ - Remove the license file: `rm -rf LICENSE`
  - Modify and replace temporary values in `.env.testing`
  - Run `composer install` first to prevent errors with pre-update scripts
  - Run `composer update` to update update all packages to the latest versions
