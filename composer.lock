@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e3b2d85fb68256f6243cf5099ea9c13",
+    "content-hash": "50fae73a15f8379bb514da6a1298604e",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -443,28 +443,38 @@
         },
         {
             "name": "ixudra/core",
-            "version": "5.3",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ixudra/core.git",
-                "reference": "4967e97ec0a6e4df748bf41cc6cea58fccd3fa3c"
+                "reference": "c4174b91718e85ea01f9f28dbaf6467f4ba55461"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ixudra/core/zipball/4967e97ec0a6e4df748bf41cc6cea58fccd3fa3c",
-                "reference": "4967e97ec0a6e4df748bf41cc6cea58fccd3fa3c",
+                "url": "https://api.github.com/repos/ixudra/core/zipball/c4174b91718e85ea01f9f28dbaf6467f4ba55461",
+                "reference": "c4174b91718e85ea01f9f28dbaf6467f4ba55461",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~5.0",
                 "laracasts/presenter": "0.2.*",
-                "php": ">=5.4.0"
+                "php": ">=7.0.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.6"
+                "phpunit/phpunit": "~6.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ixudra\\Core\\CoreServiceProvider"
+                    ],
+                    "aliases": {
+                        "Core": "Ixudra\\Core\\Core"
+                    }
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/migrations"
@@ -491,7 +501,7 @@
                 "laravel",
                 "project"
             ],
-            "time": "2017-02-10T09:42:08+00:00"
+            "time": "2017-09-05T11:06:42+00:00"
         },
         {
             "name": "ixudra/translation",
@@ -723,16 +733,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.1",
+            "version": "v5.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fad090f6e14b97df91489803644ac88b5321864e"
+                "reference": "65da63c8ad4836e2bcddcff75becd49c71c5041c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fad090f6e14b97df91489803644ac88b5321864e",
-                "reference": "fad090f6e14b97df91489803644ac88b5321864e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/65da63c8ad4836e2bcddcff75becd49c71c5041c",
+                "reference": "65da63c8ad4836e2bcddcff75becd49c71c5041c",
                 "shasum": ""
             },
             "require": {
@@ -851,7 +861,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-01T06:33:38+00:00"
+            "time": "2017-09-04T14:09:04+00:00"
         },
         {
             "name": "laravel/tinker",
