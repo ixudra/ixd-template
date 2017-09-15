@@ -54,13 +54,19 @@ There are several actions that need to be to be executed before development of a
  - Create a test database with the name `ixd_yourAppName_test`
  - Create a database user the following credentials: `yan_user_test` - `yan_pwd_test` and make sure this user has access to the test database
  - Modify and replace YourAppName in the database configuration in `codeception.yml`
- - Modify and replace yourAppName in the base url in `tests/unit/base/BaseControllerTestCase.php`
- - Create a database dump of your test database (empty tables and/or static data) and move it to `tests/_data/dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/dump.sql`
- - Create a database dump of your API test database (empty tables and/or static data) and move it to `tests/_data/acceptance-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/acceptance-dump.sql`
- - Create a database dump of your API test database (empty tables and/or static data) and move it to `tests/_data/api-dump.sql`: `mysqldump -u root -proot --no-data ixd_yourAppName > tests/_data/api-dump.sql`
- - Run `sudo vendor/bin/codecept build` to build test helpers for testing purposes (should be repeated every time you change modules for a suite)
+ - Modify and replace yourAppName in the base url in `tests/unit/base/BaseUnitTestCase.php`
+ - Update the database name and credentials in the `createDatabaseDumps.sh` script
+ - Create a database dump for your database tests using the database dump script: `bash createDatabaseDumps.sh` 
+ - Run `sudo vendor/bin/codecept build` to build test helpers for testing purposes (should be repeated every time you change the configuration of a suite)
  - Run `sudo vendor/bin/codecept run` to run all test suites
  - Run `sudo vendor/bin/codecept run --coverage-html` to run all test suites with HTML code coverage
+
+
+
+## Support
+
+Help me further develop and maintain this package by supporting me via [Patreon](https://www.patreon.com/ixudra)!!
+
 
 
 
@@ -71,6 +77,10 @@ This template is open-sourced software licensed under the [MIT license](http://o
 
 
 ## Contact
+
+For template questions, bug, suggestions and/or feature requests, please use the Github issue system and/or submit a pull request. When submitting an issue, always provide a detailed explanation of your problem, any response or feedback your get, log messages that might be relevant as well as a source code example that demonstrates the problem. If not, I will most likely not be able to help you with your problem.
+
+For any other questions, feel free to use the credentials listed below: 
 
 Jan Oris (developer)
 
