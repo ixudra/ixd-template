@@ -4,10 +4,14 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Ixudra\Core\Traits\RedirectableTrait;
 
 use Translate;
 
 class RedirectIfAuthenticated {
+
+    use RedirectableTrait;
+
 
     /**
      * Handle an incoming request.
