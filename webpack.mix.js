@@ -1,6 +1,7 @@
 let mix = require('laravel-mix');
 
 var paths = {
+    'bootstrap':        './node_modules/bootstrap-sass/assets/',
     'dateTimePicker':   './node_modules/eonasdan-bootstrap-datetimepicker/src/',
     'modernizr':        './node_modules/modernizr/',
     'moment':           './node_modules/moment/',
