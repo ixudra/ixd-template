@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 
 var paths = {
-    'bootstrap':        './node_modules/bootstrap-sass/assets/',
+    'bootstrap':        './node_modules/bootstrap-sass/themes/',
     'dateTimePicker':   './node_modules/eonasdan-bootstrap-datetimepicker/src/',
     'modernizr':        './node_modules/modernizr/',
     'moment':           './node_modules/moment/',
@@ -24,7 +24,7 @@ var paths = {
 mix
 
 // Compile SASS files
-    .sass('resources/assets/bootstrap/sass/app.scss', 'public/bootstrap/css/app.css')
+    .sass('resources/themes/bootstrap/sass/app.scss', 'public/bootstrap/css/app.css')
 
     // Copy fonts to public directory
     .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/bootstrap/fonts')
@@ -38,13 +38,13 @@ mix
 
     // Compile Javascript resources
     .js([
-        "resources/assets/bootstrap/js/app.js",
+        "resources/themes/bootstrap/js/app.js",
         'public/build/js/bootstrap.js'
     ], 'public/bootstrap/js/app.js')
 
     // Combine stylesheets
     // .styles([
-    //     "./resources/assets/bootstrap/css/app.css"
+    //     "./resources/themes/bootstrap/css/app.css"
     // ], 'public/bootstrap/css/app.css')
 
     // Version stylesheet and javascript file
