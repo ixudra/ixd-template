@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Barryvdh\Debugbar\Facade as DebugBarFacade;
@@ -24,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrapThree();
+
         /**
          * Validator
          */

@@ -1,5 +1,5 @@
 {
-    "name": "Ixd-Template",
+    "name": "ixudra/ixd-template",
     "description": "Template for all future Ixudra projects.",
     "type": "project",
     "keywords": [
@@ -16,9 +16,9 @@
     ],
 
     "require": {
-        "php": ">=7.0.0",
-        "fideloper/proxy": "~3.3",
-        "laravel/framework": "5.5.*",
+        "php": ">=7.1.0",
+        "fideloper/proxy": "~4.1",
+        "laravel/framework": "5.6.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "~5.3",
         "ixudra/core": "6.*",
@@ -29,17 +29,18 @@
     },
 
     "require-dev": {
+        "barryvdh/laravel-debugbar": "~3.2",
+        "barryvdh/laravel-ide-helper": "2.*",
+        "beyondcode/laravel-dump-server": "^1.0",
+        "codeception/codeception": "~2.2",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*",
-        "phpspec/phpspec": "~2.1",
-        "codeception/codeception": "~2.2",
         "ixudra/generators": "6.*",
-        "barryvdh/laravel-debugbar": "2.*",
-        "barryvdh/laravel-ide-helper": "2.*"
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^2.0",
+        "phpunit/phpunit": "^7.5",
+        "symfony/css-selector": "4.2.*",
+        "symfony/dom-crawler": "4.2.*"
     },
 
     "autoload": {
@@ -53,6 +54,9 @@
     },
 
     "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
         "classmap": [
             "tests/unit/base",
             "tests/functional/base",
@@ -69,15 +73,14 @@
 
     "scripts": {
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate"
+            "@php artisan key:generate --ansi"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "@php artisan package:discover --ansi"
         ]
     },
 
@@ -87,5 +90,7 @@
         "optimize-autoloader": true
     },
 
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+
+    "prefer-stable": true
 }
