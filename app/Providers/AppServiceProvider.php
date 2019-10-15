@@ -19,6 +19,25 @@ use HTML;
 class AppServiceProvider extends ServiceProvider
 {
     /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        if( Config::get('app.env') === 'local' ) {
+            $this->app->register( DebugBarServiceProvider::class );
+            $this->app->register( IdeHelperServiceProvider::class );
+            $this->app->register( GeneratorsServiceProvider::class );
+
+            $this->app->booting(function() {
+                $loader = AliasLoader::getInstance();
+                $loader->alias('Debugbar', DebugBarFacade::class );
+            });
+        }
+    }
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -93,24 +112,5 @@ class AppServiceProvider extends ServiceProvider
 
             return str_replace('#', $icon, $link);
         });
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        if( Config::get('app.env') === 'local' ) {
-            $this->app->register( DebugBarServiceProvider::class );
-            $this->app->register( IdeHelperServiceProvider::class );
-            $this->app->register( GeneratorsServiceProvider::class );
-
-            $this->app->booting(function() {
-                $loader = AliasLoader::getInstance();
-                $loader->alias('Debugbar', DebugBarFacade::class );
-            });
-        }
     }
 }
