@@ -53,7 +53,7 @@ return [
         'attributes' => [
             'prefix'     => 'admin/logs',
 
-            'middleware' => array('web'),
+            'middleware' => array('web', 'auth', 'admin'),
         ],
     ],
 
