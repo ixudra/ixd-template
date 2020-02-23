@@ -1,11 +1,11 @@
-@extends('log-viewer::_template.master')
+@extends('log-viewer::bootstrap-3._master')
 
 @section('content')
     <h1 class="page-header">Dashboard</h1>
 
     <div class="row">
         <div class="col-md-3">
-            <canvas id="stats-doughnut-chart"></canvas>
+            <canvas id="stats-doughnut-chart" height="300"></canvas>
         </div>
         <div class="col-md-9">
             <section class="box-body">
@@ -14,7 +14,7 @@
                         <div class="col-md-4">
                             <div class="info-box level level-{{ $level }} {{ $item['count'] === 0 ? 'level-empty' : '' }}">
                                 <span class="info-box-icon">
-                                    {!! log_styler()->icon($level) !!}
+                                    {{ log_styler()->icon($level) }}
                                 </span>
 
                                 <div class="info-box-content">
@@ -38,12 +38,15 @@
 @section('scripts')
     <script>
         $(function() {
-            var data = {!! $reports !!};
-
-            new Chart($('#stats-doughnut-chart')[0].getContext('2d'))
-                .Doughnut(data, {
-                    animationEasing : "easeOutQuart"
-                });
+            new Chart($('canvas#stats-doughnut-chart'), {
+                type: 'doughnut',
+                data: {!! $chartData !!},
+                options: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            });
         });
     </script>
 @endsection

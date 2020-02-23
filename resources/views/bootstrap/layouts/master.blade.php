@@ -5,6 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>@yield('page-title', 'YourAppName')</title>
         <meta name="viewport" content="width=device-width">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link rel="icon" href="/bootstrap/images/favicon/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/bootstrap/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/bootstrap/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/bootstrap/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/bootstrap/images/favicon/site.webmanifest">
 
         {!! HTML::style( mix("bootstrap/css/app.css") ) !!}
 
@@ -13,15 +20,15 @@
         @yield('header-scripts')
     </head>
     <body>
+        <header>
+            @include('bootstrap.layouts.menu-top')
+        </header>
         <div class="container">
-            <header>
-                @include('bootstrap.layouts.menu-top')
-            </header>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 d-none d-md-block">
                     &NonBreakingSpace;
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-sm-12 py-md-3 pl-md-5 bd-content">
                     <div class="row">
                         @include('bootstrap.layouts.messages')
                     </div>
@@ -32,10 +39,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 d-none d-md-block">
                     @include('bootstrap.layouts.menu-left')
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-sm-12">
                     <div id="content">
                         @yield('content')
                     </div>

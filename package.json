@@ -1,7 +1,7 @@
 {
     "name": "ixd-template",
     "version": "1.0.0",
-    "author": "Jan Oris <jan.oris@gmail.com>",
+    "author": "Jan Oris <jan.oris@ixudra.be>",
     "license": "MIT",
     "private": true,
     "scripts": {
@@ -14,6 +14,8 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+        "@fortawesome/fontawesome-free": "^5.11.2",
         "axios": "^0.19",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
@@ -27,6 +29,11 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
-        "webpack": "^4.29.6"
+        "vue-template-compiler": "^2.6.10",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.10"
+    },
+    "dependencies": {
+        "bootstrap-datepicker": "^1.9.0"
     }
 }

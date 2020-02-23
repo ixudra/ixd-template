@@ -1,13 +1,45 @@
-@extends('log-viewer::_template.master')
+<?php
+/**
+ * @var  Arcanedev\LogViewer\Entities\Log            $log
+ * @var  Illuminate\Pagination\LengthAwarePaginator  $entries
+ * @var  string|null                                 $query
+ */
+?>
+
+@extends('log-viewer::bootstrap-3._master')
 
 @section('content')
     <h1 class="page-header">Log [{{ $log->date }}]</h1>
 
     <div class="row">
         <div class="col-md-2">
-            @include('log-viewer::_partials.menu')
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-fw fa-flag"></i> Levels</div>
+                <ul class="list-group">
+                    @foreach($log->menu() as $levelKey => $item)
+                        @if ($item['count'] === 0)
+                            <a href="#" class="list-group-item disabled">
+                                <span class="badge">
+                                    {{ $item['count'] }}
+                                </span>
+                                {!! $item['icon'] !!} {{ $item['name'] }}
+                            </a>
+                        @else
+                            <a href="{{ $item['url'] }}" class="list-group-item {{ $levelKey }}">
+                                <span class="badge level-{{ $levelKey }}">
+                                    {{ $item['count'] }}
+                                </span>
+                                <span class="level level-{{ $levelKey }}">
+                                    {!! $item['icon'] !!} {{ $item['name'] }}
+                                </span>
+                            </a>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
         </div>
         <div class="col-md-10">
+            {{-- Log Details --}}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Log info :
@@ -31,7 +63,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Log entries : </td>
+                                <td>Log entries :</td>
                                 <td>
                                     <span class="label label-primary">{{ $entries->total() }}</span>
                                 </td>
@@ -51,15 +83,36 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="panel-footer">
+                    {{-- Search --}}
+                    <form action="{{ route('log-viewer::logs.search', [$log->date, $level]) }}" method="GET">
+                        <div class=form-group">
+                            <div class="input-group">
+                                <input id="query" name="query" class="form-control" value="{{ $query }}" placeholder="Type here to search">
+                                <span class="input-group-btn">
+                                    @unless (is_null($query))
+                                        <a href="{{ route('log-viewer::logs.show', [$log->date]) }}" class="btn btn-default">
+                                            ({{ $entries->count() }} results) <span class="glyphicon glyphicon-remove"></span>
+                                        </a>
+                                    @endunless
+                                    <button id="search-btn" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
+            {{-- Log Entries --}}
             <div class="panel panel-default">
                 @if ($entries->hasPages())
                     <div class="panel-heading">
-                        {!! $entries->render() !!}
+                        {{ $entries->appends(compact('query'))->render() }}
 
                         <span class="label label-info pull-right">
-                            Page {!! $entries->currentPage() !!} of {!! $entries->lastPage() !!}
+                            Page {{ $entries->currentPage() }} of {{ $entries->lastPage() }}
                         </span>
                     </div>
                 @endif
@@ -76,15 +129,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($entries as $key => $entry)
+                            @forelse($entries as $key => $entry)
+                                <?php /** @var  Arcanedev\LogViewer\Entities\LogEntry  $entry */ ?>
                                 <tr>
                                     <td>
                                         <span class="label label-env">{{ $entry->env }}</span>
                                     </td>
                                     <td>
-                                        <span class="level level-{{ $entry->level }}">
-                                            {!! $entry->level() !!}
-                                        </span>
+                                        <span class="level level-{{ $entry->level }}">{!! $entry->level() !!}</span>
                                     </td>
                                     <td>
                                         <span class="label label-default">
@@ -106,29 +158,37 @@
                                     <tr>
                                         <td colspan="5" class="stack">
                                             <div class="stack-content collapse" id="log-stack-{{ $key }}">
-                                                {!! preg_replace("/\n/", '<br>', $entry->stack) !!}
+                                                {!! $entry->stack() !!}
                                             </div>
                                         </td>
                                     </tr>
                                 @endif
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        <span class="label label-default">{{ trans('log-viewer::general.empty-logs') }}</span>
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
 
                 @if ($entries->hasPages())
                     <div class="panel-footer">
-                        {!! $entries->render() !!}
+                        {!! $entries->appends(compact('query'))->render() !!}
 
                         <span class="label label-info pull-right">
-                            Page {!! $entries->currentPage() !!} of {!! $entries->lastPage() !!}
+                            Page {{ $entries->currentPage() }} of {{ $entries->lastPage() }}
                         </span>
                     </div>
                 @endif
             </div>
         </div>
     </div>
+@endsection
 
+@section('modals')
     {{-- DELETE MODAL --}}
     <div id="delete-log-modal" class="modal fade">
         <div class="modal-dialog">
@@ -163,7 +223,7 @@
                 deleteLogForm  = $('form#delete-log-form'),
                 submitBtn      = deleteLogForm.find('button[type=submit]');
 
-            deleteLogForm.submit(function(event) {
+            deleteLogForm.on('submit', function(event) {
                 event.preventDefault();
                 submitBtn.button('loading');
 
@@ -191,6 +251,16 @@
 
                 return false;
             });
+
+            @unless (empty(log_styler()->toHighlight()))
+            $('.stack-content').each(function() {
+                var $this = $(this);
+                var html = $this.html().trim()
+                    .replace(/({!! join(log_styler()->toHighlight(), '|') !!})/gm, '<strong>$1</strong>');
+
+                $this.html(html);
+            });
+            @endunless
         });
     </script>
 @endsection

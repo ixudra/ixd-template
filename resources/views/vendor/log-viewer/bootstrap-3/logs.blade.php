@@ -1,9 +1,11 @@
-@extends('log-viewer::_template.master')
+@extends('log-viewer::bootstrap-3._master')
+
+<?php /** @var  Illuminate\Pagination\LengthAwarePaginator  $rows */ ?>
 
 @section('content')
     <h1 class="page-header">Logs</h1>
 
-    {!! $rows->render() !!}
+    {{ $rows->render() }}
 
     <div class="table-responsive">
         <table class="table table-condensed table-hover table-stats">
@@ -15,7 +17,7 @@
                             <span class="label label-info">{{ $header }}</span>
                         @else
                             <span class="level level-{{ $key }}">
-                                {!! log_styler()->icon($key) . ' ' . $header !!}
+                                {{ log_styler()->icon($key) }} {{ $header }}
                             </span>
                         @endif
                     </th>
@@ -24,40 +26,48 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($rows as $date => $row)
-                <tr>
-                    @foreach($row as $key => $value)
-                    <td class="{{ $key == 'date' ? 'text-left' : 'text-center' }}">
-                        @if ($key == 'date')
-                            <span class="label label-primary">{{ $value }}</span>
-                        @elseif ($value == 0)
-                            <span class="level level-empty">{{ $value }}</span>
-                        @else
-                            <a href="{{ route('log-viewer::logs.filter', [$date, $key]) }}">
-                                <span class="level level-{{ $key }}">{{ $value }}</span>
+                @forelse($rows as $date => $row)
+                    <tr>
+                        @foreach($row as $key => $value)
+                            <td class="{{ $key == 'date' ? 'text-left' : 'text-center' }}">
+                                @if ($key == 'date')
+                                    <span class="label label-primary">{{ $value }}</span>
+                                @elseif ($value == 0)
+                                    <span class="level level-empty">{{ $value }}</span>
+                                @else
+                                    <a href="{{ route('log-viewer::logs.filter', [$date, $key]) }}">
+                                        <span class="level level-{{ $key }}">{{ $value }}</span>
+                                    </a>
+                                @endif
+                            </td>
+                        @endforeach
+                        <td class="text-right">
+                            <a href="{{ route('log-viewer::logs.show', [$date]) }}" class="btn btn-xs btn-info">
+                                <i class="fa fa-search"></i>
                             </a>
-                        @endif
-                    </td>
-                    @endforeach
-                    <td class="text-right">
-                        <a href="{{ route('log-viewer::logs.show', [$date]) }}" class="btn btn-xs btn-info">
-                            <i class="fa fa-search"></i>
-                        </a>
-                        <a href="{{ route('log-viewer::logs.download', [$date]) }}" class="btn btn-xs btn-success">
-                            <i class="fa fa-download"></i>
-                        </a>
-                        <a href="#delete-log-modal" class="btn btn-xs btn-danger" data-log-date="{{ $date }}">
-                            <i class="fa fa-trash-o"></i>
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
+                            <a href="{{ route('log-viewer::logs.download', [$date]) }}" class="btn btn-xs btn-success">
+                                <i class="fa fa-download"></i>
+                            </a>
+                            <a href="#delete-log-modal" class="btn btn-xs btn-danger" data-log-date="{{ $date }}">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="11" class="text-center">
+                            <span class="label label-default">{{ trans('log-viewer::general.empty-logs') }}</span>
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
 
-    {!! $rows->render() !!}
+    {{ $rows->render() }}
+@endsection
 
+@section('modals')
     {{-- DELETE MODAL --}}
     <div id="delete-log-modal" class="modal fade">
         <div class="modal-dialog">
@@ -83,7 +93,7 @@
             </form>
         </div>
     </div>
-@stop
+@endsection
 
 @section('scripts')
     <script>
@@ -92,7 +102,7 @@
                 deleteLogForm  = $('form#delete-log-form'),
                 submitBtn      = deleteLogForm.find('button[type=submit]');
 
-            $("a[href=#delete-log-modal]").click(function(event) {
+            $("a[href=#delete-log-modal]").on('click', function(event) {
                 event.preventDefault();
                 var date = $(this).data('log-date');
                 deleteLogForm.find('input[name=date]').val(date);
@@ -103,7 +113,7 @@
                 deleteLogModal.modal('show');
             });
 
-            deleteLogForm.submit(function(event) {
+            deleteLogForm.on('submit', function(event) {
                 event.preventDefault();
                 submitBtn.button('loading');
 
@@ -133,10 +143,10 @@
                 return false;
             });
 
-            deleteLogModal.on('hidden.bs.modal', function(event) {
+            deleteLogModal.on('hidden.bs.modal', function() {
                 deleteLogForm.find('input[name=date]').val('');
                 deleteLogModal.find('.modal-body p').html('');
             });
         });
     </script>
-@stop
+@endsection

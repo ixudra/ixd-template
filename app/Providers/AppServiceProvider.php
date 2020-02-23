@@ -71,20 +71,20 @@ class AppServiceProvider extends ServiceProvider
                 $style .=' required';
             }
 
-            return '<div class="form-group '. $style .'">';
+            return '<div class="form-group row '. $style .'">';
         });
 
         Form::macro('closeFormGroup', function($name = '', $errors = null, $showErrors = true, $offsetLeft = 3)
         {
             $output = '';
             if( $showErrors && !is_null($errors) && $errors->has( $name ) ) {
-                $output .= '<div class="col-lg-12">';
+                $output .= '<div class="row col-lg-12">';
                 if( $offsetLeft != 0 ) {
                     $output .= '<div class="col-lg-3">&nbsp;</div>'
                         . '<div class="col-lg-8">';
                 }
 
-                $output .= $errors->first($name, '<span class="help-block">:message</span>');
+                $output .= $errors->first($name, '<div class="col-lg-12 error-message">:message</div>');
 
                 if( $offsetLeft != 0 ) {
                     $output .=  '</div>';
@@ -98,7 +98,7 @@ class AppServiceProvider extends ServiceProvider
 
         Form::macro('iconSubmit', function($value, $iconType, $options = array())
         {
-            $icon = '<i class="glyphicon glyphicon-'. $iconType .'" aria-hidden="true"></i>&nbsp;'. $value;
+            $icon = '<i class="fas fa-'. $iconType .'" aria-hidden="true"></i>&nbsp;'. $value;
             $options[ 'type' ] = 'submit';
             $link = $this->button('#', $options);
 
@@ -107,7 +107,7 @@ class AppServiceProvider extends ServiceProvider
 
         HTML::macro('iconRoute', function($route = '', $data, $iconType, $parameters = array(), $attributes = array())
         {
-            $icon = '<i class="glyphicon glyphicon-'. $iconType .'" aria-hidden="true"></i>&nbsp;';
+            $icon = '<i class="fas fa-'. $iconType .'" aria-hidden="true"></i>&nbsp;';
             $link = HTML::linkRoute($route, '#'. $data, $parameters, $attributes);
 
             return str_replace('#', $icon, $link);

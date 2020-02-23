@@ -1,8 +1,8 @@
 let mix = require('laravel-mix');
 
 var paths = {
-    'bootstrap':        './node_modules/bootstrap-sass/themes/',
-    'dateTimePicker':   './node_modules/eonasdan-bootstrap-datetimepicker/src/',
+    'bootstrap':        './node_modules/bootstrap/',
+    'dateTimePicker':   './node_modules/bootstrap-datepicker/dist/',
     'modernizr':        './node_modules/modernizr/',
     'moment':           './node_modules/moment/',
     'momentTimezone':   './node_modules/moment-timezone/',
@@ -23,28 +23,30 @@ var paths = {
 
 mix
 
-// Compile SASS files
-    .sass('resources/themes/bootstrap/sass/app.scss', 'public/bootstrap/css/app.css')
+    // Compile SASS files
+    .sass('resources/themes/bootstrap/sass/app.scss', 'public/build/bootstrap/css/app.css')
 
-    // Copy fonts to public directory
-    .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/bootstrap/fonts')
+    .combine([
+        'public/build/bootstrap/css/app.css',
+        paths.dateTimePicker + 'css/bootstrap-datepicker.css',
+    ], 'public/bootstrap/css/app.css')
 
     // Combine Javascript files
     .scripts([
-        paths.moment + "moment.js",
-        paths.dateTimePicker + "js/bootstrap-datetimepicker.js",
-        paths.restfulizer + "jquery.restfulizer.js"
-    ], 'public/build/js/bootstrap.js')
+        paths.moment + 'moment.js',
+        paths.dateTimePicker + 'js/bootstrap-datepicker.js',
+        paths.restfulizer + 'jquery.restfulizer.js',
+    ], 'public/build/bootstrap/js/bootstrap.js')
 
     // Compile Javascript resources
     .js([
-        "resources/themes/bootstrap/js/app.js",
-        'public/build/js/bootstrap.js'
+        'resources/themes/bootstrap/js/app.js',
+        'public/build/bootstrap/js/bootstrap.js'
     ], 'public/bootstrap/js/app.js')
 
     // Combine stylesheets
     // .styles([
-    //     "./resources/themes/bootstrap/css/app.css"
+    //     './resources/themes/bootstrap/css/app.css'
     // ], 'public/bootstrap/css/app.css')
 
     // Version stylesheet and javascript file
